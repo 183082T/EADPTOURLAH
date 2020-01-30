@@ -109,8 +109,9 @@
     <Content Include="adminCreateTourPackage.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="adminLogin.aspx" />
-    <Content Include="adminpage.aspx" />
+    <Content Include="AdminCreateRewards.aspx" />
     <Content Include="adminUpdate.aspx" />
+    <Content Include="AdminUpdateRewards.aspx" />
     <Content Include="adminViewTourPackage.aspx" />
     <Content Include="App_Data\TourlahDatabase.mdf" />
     <Content Include="App_Data\TourlahDatabase_log.ldf">
@@ -295,12 +296,12 @@
     <Compile Include="AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="adminpage.aspx.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
+    <Compile Include="AdminCreateRewards.aspx.cs">
+      <DependentUpon>AdminCreateRewards.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminpage.aspx.designer.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
+    <Compile Include="AdminCreateRewards.aspx.designer.cs">
+      <DependentUpon>AdminCreateRewards.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminUpdate.aspx.cs">
       <DependentUpon>adminUpdate.aspx</DependentUpon>
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="adminUpdate.aspx.designer.cs">
       <DependentUpon>adminUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateRewards.aspx.cs">
+      <DependentUpon>AdminUpdateRewards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateRewards.aspx.designer.cs">
+      <DependentUpon>AdminUpdateRewards.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminViewTourPackage.aspx.cs">
       <DependentUpon>adminViewTourPackage.aspx</DependentUpon>

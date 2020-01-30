@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateReward.aspx.cs" Inherits="WebApplication2.UpdateReward" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="UpdateReward.aspx.cs" Inherits="WebApplication2.UpdateReward" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Update Rewards</h2>
     <table class="table">
@@ -6,12 +6,6 @@
             <td>Reward Name:</td>
             <td>
                 <asp:Textbox ID="tbrn" runat="server" Enabled="false"></asp:Textbox>
-            </td>
-        </tr>
-        <tr>
-            <td>Reward Description:</td>
-            <td>
-                <asp:TextBox ID="tbrd" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>

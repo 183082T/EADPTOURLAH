@@ -58,6 +58,7 @@
                         </table>
         </div>
         <p style="margin-top: 40px; text-align: center;">Don't have an account ? <a runat="server" href="~/Register" style="color: #0000FF">Sign up now</a></p>
+        <p style="margin-top: 40px; text-align: center;">Are you an admin? <a runat="server" href="~/adminLogin" style="color: #0000FF">Login here</a></p>
     </div>
 
 

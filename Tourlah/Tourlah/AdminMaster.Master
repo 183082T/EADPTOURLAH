@@ -117,7 +117,8 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/adminCreateTourPackage">Create New Tourpackage</a></li>
                         <li><a runat="server" href="~/adminViewTourPackage">View All Tour Packages</a></li>
-                        <li><a runat="server" href="~/adminpage">Create Rewards</a></li>
+                        <li><a runat="server" href="~/AdminCreateRewards">Create Rewards</a></li>
+                        <li><a runat="server" href="~/AdminUpdateRewards">Update Rewards</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/Login.aspx">Log Out</a></li>
