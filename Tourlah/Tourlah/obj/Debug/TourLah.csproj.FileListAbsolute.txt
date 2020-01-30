@@ -134,7 +134,6 @@ C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\bin\Newtonsoft.Json.xml
 C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\bin\Antlr3.Runtime.pdb
 C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\obj\Debug\TourLah.csprojAssemblyReference.cache
 C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\obj\Debug\TourLah.csproj.CoreCompileInputs.cache
 C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\obj\Debug\TourLah.csproj.CopyComplete
 C:\Users\PC\Documents\GitHub\EADPTOURLAH\Tourlah\TourLah\obj\Debug\WebApplication2.dll
