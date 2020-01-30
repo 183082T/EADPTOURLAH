@@ -1,29 +1,33 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="tourpackage.aspx.cs" Inherits="WebApplication2.tourpackage" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="adminViewTourPackage.aspx.cs" Inherits="WebApplication2.adminViewTourPackage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
 
 
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
     <link href="css/datee.css" rel="stylesheet" />
-    <link href="css/Kahmeng/datee.css" rel="stylesheet" />
-    <link href="css/Kahmeng/tourpack.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Gelasio:500i&display=swap" rel="stylesheet">
+    <script src="Scripts/datee.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
     <div class="container-fluid" style="text-align: center; background-color: #EEE7E7">
         <h3>Singapore Tour Packages</h3>
+        <br />
+        <asp:Button runat="server" Style="border-radius: 10px; padding: 5px;" CssClass="btn-warning" Text="Click here to go to Customer View" ID="gotoCustomerView" OnClick="gotoCustomerView_Click" Width="250px"></asp:Button>
         <div class="container">
-            <div class="row" style="text-align:center; display:inline-block;"> 
-                Sort by:<asp:DropDownList OnSelectedIndexChanged="DdlSort_SelectedIndexChanged" runat="server" AutoPostBack="True" ID="DdlSort">
-                    <asp:ListItem>Recent</asp:ListItem>
-                    <asp:ListItem Value="1">Price</asp:ListItem>
-                    <asp:ListItem Value="5">Most Discounted</asp:ListItem>
-                    <asp:ListItem Value="2">Ratings</asp:ListItem>
-                    <asp:ListItem Value="3">Popularity</asp:ListItem>
-                    <asp:ListItem Value="4">Duration</asp:ListItem>
-                    
-                </asp:DropDownList>
-            </div>
+
+            <%--<div class="row"> <h2>Sort by: </h2>
+                <div class="well" style="background-color:lemonchiffon; border-radius:10px; font-size:20px;" >Price..etc</div>
+            </div>--%>
 
             <asp:Panel ID="Validation" Visible="false" runat="server" CssClass="alert alert-dismissable alert-danger" Height="64px">
                 <button type="button" class="close" data-dismiss="alert">
@@ -32,12 +36,14 @@
                 <asp:Label ID="Lbl_Msg" runat="server"></asp:Label>
             </asp:Panel>
 
+
             <div id="thumbb">
 
 
                 <asp:DataList ID="DlPackages" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
-                        <div class="row" style="background-color: aliceblue;">
+
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <img style="width: 350px; height: 197.05px;" src="<%# Eval("imageFile") %>"></>     
@@ -49,42 +55,38 @@
                     <span style="margin-left: 120px;">
                         <img src="https://image.flaticon.com/icons/png/512/59/59252.png" style="font-size: 20px; width: 25px; height: 21px">&nbsp;&nbsp; <%# Eval("tourDuration") %> </>
                     </span>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="description">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="description">
                                     <%# Eval("tourDescription") %>
                                 </p>
                             </div>
 
                             <div class="col-md-2">
-                                <p style="float: right;background-color: cornflowerblue; border-radius: 6px;">
+                                <p style="float: right; background-color: cornflowerblue; border-radius: 6px;">
 
-                                    <div class="star-rating">
-        <span style="color: yellow;" class="fa fa-star" data-rating="1"></span>
-        <span style="color: yellow;" class="fa fa-star" data-rating="2"></span>
-        <span style="color: yellow;" class="fa fa-star" data-rating="3"></span>
-        <span style="color: yellow;" class="fa fa-star" data-rating="4"></span>
-        <span class="fa fa-star-o" data-rating="5"></span>
-        <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-      </div>
+
                                 <p style="font-size: 18px; margin-top: 10px; text-align: center;">Starting From</p>
                                 <h4><strike>$<%# Eval("tourOriginalPrice") %></strike></h4>
                                 <h2>$<%# Eval("tourDiscountPrice") %></h2>
-                                 <a id="purchase" href="Purchase.aspx?purchaseId=<%# Eval("tourpackageId") %>" style="border-style: hidden; border-radius:10px;padding: 10px; font-size: 16px; background-color:lightskyblue;">Purchase</a>
-                                
+                                <a href="adminUpdate.aspx?id=<%# Eval("tourpackageId") %>" style="border-style: hidden; border-radius: 10px; padding: 10px; font-size: 20px; background-color: white;">Edit</a>
+
                             </div>
                         </div>
+
+
+
+
                     </ItemTemplate>
                 </asp:DataList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnStr %>"
                     SelectCommand="SELECT * FROM TourPackages"></asp:SqlDataSource>
 
-
                 <!-- Pagination -->
                 <div class="w3-center w3-padding-32">
                     <div class="w3-bar">
-                        <asp:Button runat="server" Text="1" class="w3-bar-item w3-button w3-hover-black"></asp:Button>
-                        <asp:Button runat="server" Text="2" class="w3-bar-item w3-button w3-hover-black"></asp:Button>
-                        <asp:Button runat="server" Text="3" class="w3-bar-item w3-button w3-hover-black"></asp:Button>
-                        <asp:Button runat="server" Text="»" class="w3-bar-item w3-button w3-hover-black"></asp:Button>
+                        <a href="#" class="w3-bar-item w3-button w3-hover-black">1      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+                            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+                            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+                            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
                     </div>
                 </div>
             </div>
@@ -124,7 +126,6 @@
                     <asp:Button runat="server" CssClass="btn btn-success" Text="Purchase" Height="39px" ID="Package1" OnClick="Package1_Click"></asp:Button>
                     </div>
                 </div>--%>
-
 
 
 

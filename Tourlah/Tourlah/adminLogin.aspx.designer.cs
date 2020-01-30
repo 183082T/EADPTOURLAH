@@ -13,39 +13,48 @@ namespace WebApplication2 {
     public partial class adminLogin {
         
         /// <summary>
-        /// t1 control.
+        /// Validation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox t1;
+        protected global::System.Web.UI.WebControls.Panel Validation;
         
         /// <summary>
-        /// t2 control.
+        /// Lbl_Msg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox t2;
+        protected global::System.Web.UI.WebControls.Label Lbl_Msg;
         
         /// <summary>
-        /// b1 control.
+        /// TbAdminName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b1;
+        protected global::System.Web.UI.WebControls.TextBox TbAdminName;
         
         /// <summary>
-        /// li control.
+        /// TbAdminPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label li;
+        protected global::System.Web.UI.WebControls.TextBox TbAdminPassword;
+        
+        /// <summary>
+        /// BtnAdminLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAdminLogin;
     }
 }

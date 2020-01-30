@@ -10,7 +10,16 @@
 namespace WebApplication2 {
     
     
-    public partial class Login {
+    public partial class adminViewTourPackage {
+        
+        /// <summary>
+        /// gotoCustomerView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button gotoCustomerView;
         
         /// <summary>
         /// Validation control.
@@ -31,30 +40,21 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Label Lbl_Msg;
         
         /// <summary>
-        /// TbUsername control.
+        /// DlPackages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbUsername;
+        protected global::System.Web.UI.WebControls.DataList DlPackages;
         
         /// <summary>
-        /// TbPassword control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbPassword;
-        
-        /// <summary>
-        /// BtnLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogin;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

@@ -106,8 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="adminCreateTourPackage.aspx" />
+    <Content Include="adminHome.aspx" />
     <Content Include="adminLogin.aspx" />
     <Content Include="adminpage.aspx" />
+    <Content Include="adminUpdate.aspx" />
+    <Content Include="adminViewTourPackage.aspx" />
     <Content Include="App_Data\TourlahDatabase.mdf" />
     <Content Include="App_Data\TourlahDatabase_log.ldf">
       <DependentUpon>TourlahDatabase.mdf</DependentUpon>
@@ -185,6 +189,7 @@
     <Content Include="UpdateReward.aspx" />
     <Content Include="Eventmain.aspx" />
     <Content Include="Works.aspx" />
+    <Content Include="AdminMaster.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\airpods.png" />
     <Content Include="Images\ankerport.png" />
@@ -262,6 +267,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminCreateTourPackage.aspx.cs">
+      <DependentUpon>adminCreateTourPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminCreateTourPackage.aspx.designer.cs">
+      <DependentUpon>adminCreateTourPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminHome.aspx.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminHome.aspx.designer.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminLogin.aspx.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -269,12 +288,33 @@
     <Compile Include="adminLogin.aspx.designer.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="adminpage.aspx.cs">
       <DependentUpon>adminpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminpage.aspx.designer.cs">
       <DependentUpon>adminpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminUpdate.aspx.cs">
+      <DependentUpon>adminUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminUpdate.aspx.designer.cs">
+      <DependentUpon>adminUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminViewTourPackage.aspx.cs">
+      <DependentUpon>adminViewTourPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminViewTourPackage.aspx.designer.cs">
+      <DependentUpon>adminViewTourPackage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -285,8 +325,10 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\Admin.cs" />
     <Compile Include="BLL\Events.cs" />
     <Compile Include="BLL\Rewards.cs" />
+    <Compile Include="BLL\TourPackage.cs" />
     <Compile Include="BLL\Users.cs" />
     <Compile Include="Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
@@ -302,8 +344,10 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\AdminDAO.cs" />
     <Compile Include="DAL\EventsDAO.cs" />
     <Compile Include="DAL\RewardsDAO.cs" />
+    <Compile Include="DAL\TourPackageDAO.cs" />
     <Compile Include="DAL\UsersDAO.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

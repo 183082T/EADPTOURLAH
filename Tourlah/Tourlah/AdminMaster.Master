@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication2.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="WebApplication2.AdminMaster" %>
+
 
 <!DOCTYPE html>
 
@@ -112,26 +113,13 @@
                     <a class="navbar-brand" runat="server" href="~/">TourLah</a>
                 </div>
 
-                <div class="navbar-collapse collapse">
+               <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/"></a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Eventmain">Events</a></li>
-                        <li><a runat="server" href="~/">Food</a></li>
-                        <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
-                        <li><a runat="server" href="~/Shop">Shop</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="rewardsDropdown" data-toggle="dropdown">
-                                Rewards<span class="caret"></span></a>
-                            <ul class="dropdown-menu" aria-labelledby="rewardsDropdown">
-                                <li><a class="dropdown-item" runat="server" href="~/Works">How It Works</a></li>
-                                <li><a class="dropdown-item" runat="server" href="~/RewardsTest">Rewards</a></li>
-                            </ul>
-                        </li>
-                        <li><a runat="server" href="~/TEssential">Traveller Essentials</a></li>
+                        <li><a runat="server" href="~/adminCreateTourPackage">Create New Tourpackage</a></li>
+                        <li><a runat="server" href="~/adminViewTourPackage">View All Tour Packages</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a><asp:Button runat="server" style="background-color:transparent; border:none;" Text="Login/Sign Up" ID="Login" OnClick="Login_Click"></asp:Button></a></li>
+                        <li><a runat="server" href="~/Login.aspx">Log Out</a></li>
                     </ul>
                 </div>
             </div>
@@ -155,7 +143,6 @@
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
     <script>
