@@ -7,9 +7,7 @@
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
-    <link href="css/datee.css" rel="stylesheet" />
-    <link href="css/Kahmeng/datee.css" rel="stylesheet" />
-    <link href="css/Kahmeng/tourpack.css" rel="stylesheet" />
+    <link href="css/tourpack.css" rel="stylesheet" />
     <div class="container-fluid" style="text-align: center; background-color: #EEE7E7">
         <h3>Singapore Tour Packages</h3>
         <div class="container">

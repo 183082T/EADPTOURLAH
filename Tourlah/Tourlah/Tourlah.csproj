@@ -137,7 +137,6 @@
     <Content Include="css\styleRewards4.css" />
     <Content Include="Content\tether.min.css" />
     <Content Include="css\checkout.css" />
-    <Content Include="css\datee.css" />
     <Content Include="css\master.css" />
     <Content Include="css\shop.css" />
     <Content Include="css\tEssential.css" />
