@@ -14,12 +14,8 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                //var ID = Session["FoodID"].ToString();
-            }
-        }
 
+        }
         protected void ButtonEdit_Click(object sender, EventArgs e)
         {
             if (ValidateInput())

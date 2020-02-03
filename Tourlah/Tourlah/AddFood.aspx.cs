@@ -1,14 +1,12 @@
-﻿using WebApplication2.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication2.BLL;
-using System.IO;
-using System.Drawing;
 
 namespace WebApplication2
 {

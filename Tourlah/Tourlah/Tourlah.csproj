@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddFood.aspx" />
     <Content Include="adminCreateTourPackage.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="adminLogin.aspx" />
@@ -142,11 +143,13 @@
     <Content Include="css\tEssential.css" />
     <Content Include="css\tourpack.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EditFood.aspx" />
     <Content Include="Eventpage.aspx" />
     <Content Include="EventUpdate.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FoodInfo.aspx" />
     <Content Include="FoodMain.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -164,14 +167,19 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Images\building.gif" />
     <Content Include="Images\cashback.svg" />
+    <Content Include="Images\charkuaytiao.jpg" />
+    <Content Include="Images\chickenrice.jpg" />
+    <Content Include="Images\chillicrab.jpg" />
     <Content Include="Images\currency.jpg" />
     <Content Include="Images\filter.gif" />
     <Content Include="Images\handicap.jpg" />
+    <Content Include="Images\laksa.jpg" />
     <Content Include="Images\language.jpg" />
     <Content Include="Images\mosque.jpg" />
     <Content Include="Images\numbers.jpg" />
     <Content Include="Images\powerPlug.jpg" />
     <Content Include="Images\receipt.svg" />
+    <Content Include="Images\rotiprata.jpg" />
     <Content Include="Images\scan.svg" />
     <Content Include="Images\shop.svg" />
     <Content Include="Images\smoking.jpg" />
@@ -267,6 +275,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFood.aspx.cs">
+      <DependentUpon>AddFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFood.aspx.designer.cs">
+      <DependentUpon>AddFood.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminCreateTourPackage.aspx.cs">
       <DependentUpon>adminCreateTourPackage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,6 +349,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\Admin.cs" />
     <Compile Include="BLL\Events.cs" />
+    <Compile Include="BLL\Food.cs" />
     <Compile Include="BLL\Rewards.cs" />
     <Compile Include="BLL\TourPackage.cs" />
     <Compile Include="BLL\Users.cs" />
@@ -353,6 +369,7 @@
     </Compile>
     <Compile Include="DAL\AdminDAO.cs" />
     <Compile Include="DAL\EventsDAO.cs" />
+    <Compile Include="DAL\FoodDAO.cs" />
     <Compile Include="DAL\RewardsDAO.cs" />
     <Compile Include="DAL\TourPackageDAO.cs" />
     <Compile Include="DAL\UsersDAO.cs" />
@@ -362,6 +379,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditFood.aspx.cs">
+      <DependentUpon>EditFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditFood.aspx.designer.cs">
+      <DependentUpon>EditFood.aspx</DependentUpon>
     </Compile>
     <Compile Include="Eventpage.aspx.cs">
       <DependentUpon>Eventpage.aspx</DependentUpon>
@@ -376,6 +400,13 @@
     </Compile>
     <Compile Include="EventUpdate.aspx.designer.cs">
       <DependentUpon>EventUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FoodInfo.aspx.cs">
+      <DependentUpon>FoodInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FoodInfo.aspx.designer.cs">
+      <DependentUpon>FoodInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="FoodMain.aspx.cs">
       <DependentUpon>FoodMain.aspx</DependentUpon>

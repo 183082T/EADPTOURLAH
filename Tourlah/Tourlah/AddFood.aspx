@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddFood.aspx.cs" Inherits="WebApplication2.AddFood" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <table style="width: 100%">
+    <table style="width: 100%">
         <tr>
             <td style="width: 113px">&nbsp;</td>
             <td>&nbsp;</td>

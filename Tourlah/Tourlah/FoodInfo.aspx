@@ -5,7 +5,7 @@
     <br />
 
     <div style="width: 40%; margin: 0 auto;">
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BorderStyle="None">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BorderStyle="None" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
             <ItemTemplate>
                 <table style="width: 100%">
                     <tr>
@@ -125,7 +125,5 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </p>
-
-
 
 </asp:Content>

@@ -25,7 +25,7 @@ namespace WebApplication2.DAL
 
             List<Food> empList = new List<Food>();
             int rec_cnt = ds.Tables[0].Rows.Count;
-            for (int i=0; i<rec_cnt; i++)
+            for (int i = 0; i < rec_cnt; i++)
             {
                 DataRow row = ds.Tables[0].Rows[i];
 
