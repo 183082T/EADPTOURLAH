@@ -115,7 +115,6 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/"></a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Eventmain">Events</a></li>
                         <li><a runat="server" href="~/FoodMain">Food</a></li>
@@ -133,7 +132,7 @@
                         <li><a runat="server" href="~/TEssential">Traveller Essentials</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a><asp:Button runat="server" style="background-color:transparent; border:none;" Text="Login/Sign Up" ID="Login" OnClick="Login_Click"></asp:Button></a></li>
+                         <li><a><asp:Button runat="server" style="background-color:transparent;color:white; border:none;" Text="Login/Sign Up" ID="Login" OnClick="Login_Click"></asp:Button></a></li>
                     </ul>
                 </div>
             </div>

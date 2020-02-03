@@ -24,7 +24,7 @@ namespace WebApplication2
             if (String.IsNullOrEmpty(TbUsername.Text.ToString()) & (String.IsNullOrEmpty(TbPassword.Text.ToString())))
             {
                 Lbl_Msg.Text = "Please do not leave formfields empty";
-                Validation.CssClass = "alert alert-dismissable alert-warning";
+                Validation.CssClass = "alert alert-dismissable alert-danger";
                 Lbl_Msg.ForeColor = Color.Red;
             }
 

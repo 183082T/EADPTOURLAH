@@ -11,27 +11,157 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["errormsg"] != null)
+                {
+                    Validation.Visible = true;
+                    Lbl_Msg.Text = Session["errormsg"].ToString();
+                    Session["errormsg"] = null;
+                }
+                else
+                {
+                    Validation.Visible = false;
 
-
+                }
+            }
         }
-
         protected void DdlSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DdlSort.SelectedIndex == 1)
+            if (DdlOrder.SelectedIndex == 0)
             {
-                SqlDataSource1.SelectCommand = "Select * from TourPackages order by tourDiscountPrice asc";
+
+                if (DdlSort.SelectedIndex == 1) //price
+                {
+                    SqlDataSource1.SelectCommand = "Select * from TourPackages order by tourDiscountPrice asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 5) //duration
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by SUBSTRING(tourDuration,0,20) asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 2) //mostdiscounted
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by ( CAST(tourOriginalPrice as int) - CAST(tourDiscountPrice as int)) asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 0) //recent
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourpackageId asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 4) //pop
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourPurchaseCount asc";
+                }
+                else
+                {
+                    Lbl_Msg.Text = "Error in sorting";
+                }
             }
 
-            if (DdlSort.SelectedIndex == 4)
+            else
             {
-                SqlDataSource1.SelectCommand = "select * from TourPackages order by SUBSTRING(tourDuration,0,20)";
+                if (DdlSort.SelectedIndex == 1) //price
+                {
+                    SqlDataSource1.SelectCommand = "Select * from TourPackages order by tourDiscountPrice desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 5) //duration
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by SUBSTRING(tourDuration,0,20) desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 2) //mostdiscounted
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by ( CAST(tourOriginalPrice as int) - CAST(tourDiscountPrice as int)) desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 0) //recent
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourpackageId desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 4) //pop
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourPurchaseCount desc";
+                }
+                else
+                {
+                    Lbl_Msg.Text = "Error in sorting";
+                }
+
+            }
+        }
+
+        protected void DdlOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DdlOrder.SelectedIndex == 0)
+            {
+
+                if (DdlSort.SelectedIndex == 1) //price
+                {
+                    SqlDataSource1.SelectCommand = "Select * from TourPackages order by tourDiscountPrice asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 5) //duration
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by SUBSTRING(tourDuration,0,20) asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 2) //mostdiscounted
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by ( CAST(tourOriginalPrice as int) - CAST(tourDiscountPrice as int)) asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 0) //recent
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourpackageId asc";
+                }
+
+                else if (DdlSort.SelectedIndex == 4) //pop
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourPurchaseCount asc";
+                }
+                else
+                {
+                    Lbl_Msg.Text = "Error in sorting";
+                }
+
             }
 
-            if (DdlSort.SelectedIndex == 5)
+            else
             {
-                SqlDataSource1.SelectCommand = "select * from TourPackages order by ( CAST(tourOriginalPrice as int) - CAST(tourDiscountPrice as int)) desc";
-            }
+                if (DdlSort.SelectedIndex == 1) //price
+                {
+                    SqlDataSource1.SelectCommand = "Select * from TourPackages order by tourDiscountPrice desc";
+                }
 
+                else if (DdlSort.SelectedIndex == 5) //duration
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by SUBSTRING(tourDuration,0,20) desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 2) //mostdiscounted
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by ( CAST(tourOriginalPrice as int) - CAST(tourDiscountPrice as int)) desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 0) //recent
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourpackageId desc";
+                }
+
+                else if (DdlSort.SelectedIndex == 4) //pop
+                {
+                    SqlDataSource1.SelectCommand = "select * from TourPackages order by tourPurchaseCount desc";
+                }
+                else
+                {
+                    Lbl_Msg.Text = "Error in sorting";
+                }
+            }
         }
     }
 }
