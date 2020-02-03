@@ -16,7 +16,7 @@ namespace WebApplication2.BLL
         public string Location { get; set; }
         public string OriginalPrice { get; set; }
         public string DiscountPrice { get; set; }
-
+        public string PurchaseCount { get; set; }
 
         public TourPackage()
         {
@@ -35,6 +35,20 @@ namespace WebApplication2.BLL
             DiscountPrice = tourdiscountprice;
         }
 
+
+        public TourPackage(string tourid, string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice, string purchasecount)
+        {
+            TourPackageId = tourid;
+            TourPackageName = tourname;
+            ImageFile = image;
+            Description = tourdescription;
+            Duration = tourduration;
+            Location = tourlocation;
+            OriginalPrice = touroriginalprice;
+            DiscountPrice = tourdiscountprice;
+            PurchaseCount = purchasecount;
+        }
+
         public int CreateTourPackage(string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice)
         {
             TourPackageDAO dao = new TourPackageDAO();
@@ -42,11 +56,11 @@ namespace WebApplication2.BLL
             return result;
         }
 
-        public List<TourPackage> ViewAllTourPackage()
-        {
-            TourPackageDAO dao = new TourPackageDAO();
-            return dao.SelectAll();
-        }
+        //public List<TourPackage> ViewAllTourPackage()
+        //{
+        //    TourPackageDAO dao = new TourPackageDAO();
+        //    return dao.SelectAll();
+        //}
 
         public TourPackage GetPackageById(string tourid)
         {
@@ -57,6 +71,11 @@ namespace WebApplication2.BLL
         {
             return TourPackageDAO.UpdateTourPackage(tourid, tourname, image, tourdescription, tourduration, tourlocation, touroriginalprice, tourdiscountprice);
 
+        }
+
+        public int updatecounter(string userid, string purchasecounter)
+        {
+            return TourPackageDAO.UpdateCounter(userid, purchasecounter);
         }
     }
 }

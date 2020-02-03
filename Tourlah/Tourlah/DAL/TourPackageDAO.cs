@@ -142,5 +142,24 @@ namespace WebApplication2.DAL
 
             return result;
         }
+
+
+        public static int UpdateCounter(string tourid, string purchasecount)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(connStr);
+
+            string sqlStmt = @"UPDATE TourPackages SET tourPurchaseCount = @paracounter + 1 where tourPackageId = @paraid";
+
+            int result = 0;    // Execute NonQuery return an integer value
+            SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
+            sqlCmd.Parameters.AddWithValue("@paraid", tourid);
+            sqlCmd.Parameters.AddWithValue("@paracounter", purchasecount);
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+            myConn.Close();
+
+            return result;
+        }
     }
 }

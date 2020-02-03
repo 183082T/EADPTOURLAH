@@ -13,15 +13,6 @@ namespace WebApplication2 {
     public partial class tourpackage {
         
         /// <summary>
-        /// DdlSort control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlSort;
-        
-        /// <summary>
         /// Validation control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,24 @@ namespace WebApplication2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Lbl_Msg;
+        
+        /// <summary>
+        /// DdlSort control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlSort;
+        
+        /// <summary>
+        /// DdlOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlOrder;
         
         /// <summary>
         /// DlPackages control.

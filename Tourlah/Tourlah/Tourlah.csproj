@@ -135,6 +135,7 @@
     <Content Include="Content\mbr-additional.css" />
     <Content Include="Content\mobirise-icons.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\styleEventMain.css" />
     <Content Include="css\styleRewards1.css" />
     <Content Include="css\styleRewards2.css" />
@@ -213,6 +214,7 @@
     <Content Include="productDetails.aspx" />
     <Content Include="ProductUpdateForm.aspx" />
     <Content Include="ProductViewForm.aspx" />
+    <Content Include="purchase.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RewardsPage.aspx" />
     <Content Include="RewardsTest.aspx" />
@@ -392,6 +394,7 @@
     <Compile Include="BLL\Food.cs" />
     <Compile Include="BLL\Product.cs" />
     <Compile Include="BLL\productDetails.cs" />
+    <Compile Include="BLL\Purchase.cs" />
     <Compile Include="BLL\Rewards.cs" />
     <Compile Include="BLL\TourPackage.cs" />
     <Compile Include="BLL\updateProduct.cs" />
@@ -431,6 +434,7 @@
     <Compile Include="DAL\FoodDAO.cs" />
     <Compile Include="DAL\ProductDAO.cs" />
     <Compile Include="DAL\productDetailsDAO.cs" />
+    <Compile Include="DAL\PurchaseDAO.cs" />
     <Compile Include="DAL\RewardsDAO.cs" />
     <Compile Include="DAL\TourPackageDAO.cs" />
     <Compile Include="DAL\updateProductDAO.cs" />
@@ -523,6 +527,13 @@
       <DependentUpon>ProductViewForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchase.aspx.cs">
+      <DependentUpon>purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="purchase.aspx.designer.cs">
+      <DependentUpon>purchase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

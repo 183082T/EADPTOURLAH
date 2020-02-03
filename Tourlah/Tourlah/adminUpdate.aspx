@@ -17,8 +17,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-    <div class="container-fluid" style="text-align: center; background-color: #EEE7E7">
-        <h3>Singapore Tour Packages</h3>
+    <div class="container-fluid" style="text-align: center;background-color: #EEE7E7">
+        <h3 style="margin-bottom:20px; ">Singapore Tour Packages</h3>
          
         <div class="container">
 <asp:Panel ID="Validation" Visible="false" runat="server" CssClass="alert alert-dismissable alert-info" Height="64px">
@@ -44,7 +44,7 @@
         
                         <img src="https://image.flaticon.com/icons/png/512/59/59252.png" style="font-size: 20px; width: 25px; height: 21px"><asp:TextBox runat="server" required="required" ID="updateDuration" Width="350px"></asp:TextBox> 
                     
-                        <p class="description">
+                        <p class="description" style="padding-top:10px;">
                             <asp:TextBox runat="server" TextMode="MultiLine" Style="resize:none; " required="required" ID="updateDescription" Height="130px" Width="520px"></asp:TextBox>
                         </p>
                     </div>
