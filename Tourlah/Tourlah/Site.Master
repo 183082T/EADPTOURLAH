@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication2.SiteMaster" %>
 
+<%@ Register src="LeftMenuControl.ascx" tagname="LeftMenuControl" tagprefix="uc1" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -119,7 +120,8 @@
                         <li><a runat="server" href="~/Eventmain">Events</a></li>
                         <li><a runat="server" href="~/FoodMain">Food</a></li>
                         <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
-                        <li><a runat="server" href="~/Shop">Shop</a></li>
+                        <li><a runat="server" href="~/Category">Shop</a></li>
+                        <li><a runat="server" href="~/Cart">Cart</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" id="rewardsDropdown" data-toggle="dropdown">
                                 Rewards<span class="caret"></span></a>
