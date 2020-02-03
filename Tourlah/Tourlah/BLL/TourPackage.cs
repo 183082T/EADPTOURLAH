@@ -22,20 +22,6 @@ namespace WebApplication2.BLL
         {
 
         }
-
-        public TourPackage(string tourid, string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice)
-        {
-            TourPackageId = tourid;
-            TourPackageName = tourname;
-            ImageFile = image;
-            Description = tourdescription;
-            Duration = tourduration;
-            Location = tourlocation;
-            OriginalPrice = touroriginalprice;
-            DiscountPrice = tourdiscountprice;
-        }
-
-
         public TourPackage(string tourid, string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice, string purchasecount)
         {
             TourPackageId = tourid;

@@ -4,7 +4,18 @@
 
 
     <div class="container">
+        <asp:Panel ID="Validation" Visible="false" runat="server" CssClass="alert alert-dismissable alert-success" Height="64px">
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span style="font-size:18px;" class="glyphicon glyphicon-ok"></span>
+                <asp:Label ID="Lbl_Msg" runat="server" style="font-size:18px; margin-left:10px;"></asp:Label>
+            
+            
+        </asp:Panel>
+        <asp:Label runat="server" ID="LblWelcome"></asp:Label>
     <h2><%: Title %>.</h2>
+
     <h3>Your application description page.</h3>
     <p>Use this area to provide additional information.</p>
 </div>

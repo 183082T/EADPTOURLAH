@@ -119,6 +119,7 @@
                         <li><a runat="server" href="~/Eventmain">Events</a></li>
                         <li><a runat="server" href="~/FoodMain">Food</a></li>
                         <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
+                        <li><a runat="server" href="~/ViewPurchases">View Purchase Log</a></li>
                         <li><a runat="server" href="~/Category">Shop</a></li>
                         <li><a runat="server" href="~/Cart">Cart</a></li>
                         <li class="dropdown">
