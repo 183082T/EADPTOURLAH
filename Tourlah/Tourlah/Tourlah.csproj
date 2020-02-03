@@ -108,6 +108,8 @@
     <Content Include="About.aspx" />
     <Content Include="AddFood.aspx" />
     <Content Include="adminCreateTourPackage.aspx" />
+    <Content Include="AdminFoodInfo.aspx" />
+    <Content Include="AdminFoodMain.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="adminLogin.aspx" />
     <Content Include="AdminCreateRewards.aspx" />
@@ -288,6 +290,20 @@
     </Compile>
     <Compile Include="adminCreateTourPackage.aspx.designer.cs">
       <DependentUpon>adminCreateTourPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFoodInfo.aspx.cs">
+      <DependentUpon>AdminFoodInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFoodInfo.aspx.designer.cs">
+      <DependentUpon>AdminFoodInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFoodMain.aspx.cs">
+      <DependentUpon>AdminFoodMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFoodMain.aspx.designer.cs">
+      <DependentUpon>AdminFoodMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminHome.aspx.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>
