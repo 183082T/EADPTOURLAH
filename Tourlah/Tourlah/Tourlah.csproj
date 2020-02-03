@@ -223,6 +223,7 @@
     <Content Include="TEssential.aspx" />
     <Content Include="UpdateReward.aspx" />
     <Content Include="Eventmain.aspx" />
+    <Content Include="ViewPurchases.aspx" />
     <Content Include="Works.aspx" />
     <Content Include="AdminMaster.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -596,6 +597,13 @@
     </Compile>
     <Compile Include="UpdateReward.aspx.designer.cs">
       <DependentUpon>UpdateReward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPurchases.aspx.cs">
+      <DependentUpon>ViewPurchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPurchases.aspx.designer.cs">
+      <DependentUpon>ViewPurchases.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

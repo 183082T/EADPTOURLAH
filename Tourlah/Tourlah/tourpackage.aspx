@@ -17,7 +17,8 @@
                 <button type="button" class="close" data-dismiss="alert">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <asp:Label ID="Lbl_Msg" runat="server"></asp:Label>
+                <span style="font-size:18px;" class="glyphicon glyphicon-exclamation-sign"></span>
+                <asp:Label ID="Lbl_Msg"  style="margin-left:10px; font-size:18px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" runat="server"></asp:Label>
             </asp:Panel>
 
             <div class="row" style="text-align: center; display: inline-block;">

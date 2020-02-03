@@ -49,6 +49,8 @@ namespace WebApplication2.DAL
             string tourlocation = rd["tourLocation"].ToString();
             string touroriginalprice = rd["tourOriginalPrice"].ToString();
             string tourdiscountprice = rd["tourDiscountPrice"].ToString();
+            string purchasecount = rd["tourPurchaseCount"].ToString();
+
 
             TourPackage tp = new TourPackage
             {
@@ -59,7 +61,9 @@ namespace WebApplication2.DAL
                 Duration = tourduration,
                 Location = tourlocation,
                 OriginalPrice = touroriginalprice,
-                DiscountPrice = tourdiscountprice
+                DiscountPrice = tourdiscountprice,
+                PurchaseCount = purchasecount
+
             };
             return tp;
 
@@ -88,35 +92,35 @@ namespace WebApplication2.DAL
         }
 
 
-        public List<TourPackage> SelectAll()
-        {
+        //public List<TourPackage> SelectAll()
+        //{
 
-            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-            SqlConnection myConn = new SqlConnection(DBConnect);
+        //    string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+        //    SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "Select * from TourPackages";
-            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            List<TourPackage> pack = new List<TourPackage>();
-            int rec_cnt = ds.Tables[0].Rows.Count;
-            for (int i = 0; i < rec_cnt; i++)
-            {
-                DataRow row = ds.Tables[0].Rows[i];  // Sql command returns only one record
-                string tourid = row["tourpackageId"].ToString();
-                string tourname = row["tourName"].ToString();
-                string image = row["imageFile"].ToString();
-                string tourdescription = row["tourDescription"].ToString();
-                string tourduration = row["tourDuration"].ToString();
-                string tourlocation = row["tourLocation"].ToString();
-                string touroriginalprice = row["tourOriginalPrice"].ToString();
-                string tourdiscountprice = row["tourDiscountPrice"].ToString();
-                TourPackage obj = new TourPackage(tourid, tourname, image, tourdescription, tourduration, tourlocation, touroriginalprice, tourdiscountprice);
-                pack.Add(obj);
-            }
+        //    string sqlStmt = "Select * from TourPackages";
+        //    SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+        //    DataSet ds = new DataSet();
+        //    da.Fill(ds);
+        //    List<TourPackage> pack = new List<TourPackage>();
+        //    int rec_cnt = ds.Tables[0].Rows.Count;
+        //    for (int i = 0; i < rec_cnt; i++)
+        //    {
+        //        DataRow row = ds.Tables[0].Rows[i];  // Sql command returns only one record
+        //        string tourid = row["tourpackageId"].ToString();
+        //        string tourname = row["tourName"].ToString();
+        //        string image = row["imageFile"].ToString();
+        //        string tourdescription = row["tourDescription"].ToString();
+        //        string tourduration = row["tourDuration"].ToString();
+        //        string tourlocation = row["tourLocation"].ToString();
+        //        string touroriginalprice = row["tourOriginalPrice"].ToString();
+        //        string tourdiscountprice = row["tourDiscountPrice"].ToString();
+        //        TourPackage obj = new TourPackage(tourid, tourname, image, tourdescription, tourduration, tourlocation, touroriginalprice, tourdiscountprice);
+        //        pack.Add(obj);
+        //    }
 
-            return pack;
-        }
+        //    return pack;
+        //}
 
         public static int UpdateTourPackage(string tourid, string tourname, string image, string tourdescription, string tourlocation, string tourduration, string touroriginalprice, string tourdiscountprice)
         {
