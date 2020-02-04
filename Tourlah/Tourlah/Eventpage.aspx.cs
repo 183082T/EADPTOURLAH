@@ -11,7 +11,13 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Eventlbl.Text = (string)Session["Event Name"];
+            DescriptionLbl.Text=(string)Session["Event Description"];
+            EventDatelbl.Text=(string)Session["Event Dates"];
+            EventLocationlbl.Text=(string)Session["Event Location"];
+            Maintypelbl.Text = (string)Session["Event MainType"];
+            Secondtypelbl.Text = (string)Session["Event SecondType"];
+            
         }
     }
 }

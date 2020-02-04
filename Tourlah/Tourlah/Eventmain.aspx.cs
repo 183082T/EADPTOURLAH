@@ -21,7 +21,7 @@ namespace WebApplication2
         {
             GridViewRow row = EventGV.SelectedRow;
             Session["Event Name"] = row.Cells[0].Text;
-            Session["Event Description "] = row.Cells[1].Text;
+            Session["Event Description"] = row.Cells[1].Text;
             Session["Event Dates"] = row.Cells[2].Text;
             Session["Event MainType"] = row.Cells[3].Text;
             Session["Event SecondType"] = row.Cells[4].Text;
