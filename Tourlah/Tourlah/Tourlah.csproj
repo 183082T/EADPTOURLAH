@@ -106,12 +106,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddFood.aspx" />
+    <Content Include="adminCreateTourPackage.aspx" />
+    <Content Include="AdminFoodInfo.aspx" />
+    <Content Include="AdminFoodMain.aspx" />
+    <Content Include="adminHome.aspx" />
     <Content Include="adminLogin.aspx" />
-    <Content Include="adminpage.aspx" />
+    <Content Include="AdminCreateRewards.aspx" />
+    <Content Include="adminUpdate.aspx" />
+    <Content Include="AdminUpdateRewards.aspx" />
+    <Content Include="adminViewTourPackage.aspx" />
     <Content Include="App_Data\TourlahDatabase.mdf" />
     <Content Include="App_Data\TourlahDatabase_log.ldf">
       <DependentUpon>TourlahDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Cart.aspx" />
+    <Content Include="Category.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\animate.css" />
@@ -125,6 +135,7 @@
     <Content Include="Content\mbr-additional.css" />
     <Content Include="Content\mobirise-icons.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\styleEventMain.css" />
     <Content Include="css\styleRewards1.css" />
     <Content Include="css\styleRewards2.css" />
@@ -132,17 +143,18 @@
     <Content Include="css\styleRewards4.css" />
     <Content Include="Content\tether.min.css" />
     <Content Include="css\checkout.css" />
-    <Content Include="css\datee.css" />
     <Content Include="css\master.css" />
     <Content Include="css\shop.css" />
     <Content Include="css\tEssential.css" />
     <Content Include="css\tourpack.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EditFood.aspx" />
     <Content Include="Eventpage.aspx" />
     <Content Include="EventUpdate.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FoodInfo.aspx" />
     <Content Include="FoodMain.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -160,14 +172,35 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Images\building.gif" />
     <Content Include="Images\cashback.svg" />
+    <Content Include="Images\charkuaytiao.jpg" />
+    <Content Include="Images\cheongsam1.jfif" />
+    <Content Include="Images\chickenrice.jpg" />
+    <Content Include="Images\chillicrab.jpg" />
+    <Content Include="Images\chiMale.jpg" />
+    <Content Include="Images\chiMale2.jpg" />
+    <Content Include="Images\chiMale3.jpg" />
+    <Content Include="Images\cs1.jpg" />
+    <Content Include="Images\cs2.jpg" />
     <Content Include="Images\currency.jpg" />
     <Content Include="Images\filter.gif" />
     <Content Include="Images\handicap.jpg" />
+    <Content Include="Images\I1.jpg" />
+    <Content Include="Images\I2.jpg" />
+    <Content Include="Images\IM3.jpg" />
+    <Content Include="Images\IM4.jpg" />
+    <Content Include="Images\IM5.jfif" />
+    <Content Include="Images\IM5.jpg" />
+    <Content Include="Images\laksa.jpg" />
     <Content Include="Images\language.jpg" />
+    <Content Include="Images\m1.jpg" />
+    <Content Include="Images\m2.jpg" />
+    <Content Include="Images\m3.jpg" />
+    <Content Include="Images\MaleM3.jpg" />
     <Content Include="Images\mosque.jpg" />
     <Content Include="Images\numbers.jpg" />
     <Content Include="Images\powerPlug.jpg" />
     <Content Include="Images\receipt.svg" />
+    <Content Include="Images\rotiprata.jpg" />
     <Content Include="Images\scan.svg" />
     <Content Include="Images\shop.svg" />
     <Content Include="Images\smoking.jpg" />
@@ -176,6 +209,12 @@
     <Content Include="Images\water.jpg" />
     <Content Include="Images\weather.jpg" />
     <Content Include="Images\wifi.jpg" />
+    <Content Include="LeftMenuControl.ascx" />
+    <Content Include="productCreation.aspx" />
+    <Content Include="productDetails.aspx" />
+    <Content Include="ProductUpdateForm.aspx" />
+    <Content Include="ProductViewForm.aspx" />
+    <Content Include="purchase.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RewardsPage.aspx" />
     <Content Include="RewardsTest.aspx" />
@@ -184,7 +223,9 @@
     <Content Include="TEssential.aspx" />
     <Content Include="UpdateReward.aspx" />
     <Content Include="Eventmain.aspx" />
+    <Content Include="ViewPurchases.aspx" />
     <Content Include="Works.aspx" />
+    <Content Include="AdminMaster.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\airpods.png" />
     <Content Include="Images\ankerport.png" />
@@ -262,6 +303,41 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFood.aspx.cs">
+      <DependentUpon>AddFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFood.aspx.designer.cs">
+      <DependentUpon>AddFood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminCreateTourPackage.aspx.cs">
+      <DependentUpon>adminCreateTourPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminCreateTourPackage.aspx.designer.cs">
+      <DependentUpon>adminCreateTourPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFoodInfo.aspx.cs">
+      <DependentUpon>AdminFoodInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFoodInfo.aspx.designer.cs">
+      <DependentUpon>AdminFoodInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFoodMain.aspx.cs">
+      <DependentUpon>AdminFoodMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminFoodMain.aspx.designer.cs">
+      <DependentUpon>AdminFoodMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminHome.aspx.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminHome.aspx.designer.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminLogin.aspx.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -269,12 +345,40 @@
     <Compile Include="adminLogin.aspx.designer.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminpage.aspx.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminpage.aspx.designer.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCreateRewards.aspx.cs">
+      <DependentUpon>AdminCreateRewards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCreateRewards.aspx.designer.cs">
+      <DependentUpon>AdminCreateRewards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminUpdate.aspx.cs">
+      <DependentUpon>adminUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminUpdate.aspx.designer.cs">
+      <DependentUpon>adminUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateRewards.aspx.cs">
+      <DependentUpon>AdminUpdateRewards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateRewards.aspx.designer.cs">
+      <DependentUpon>AdminUpdateRewards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminViewTourPackage.aspx.cs">
+      <DependentUpon>adminViewTourPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminViewTourPackage.aspx.designer.cs">
+      <DependentUpon>adminViewTourPackage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -285,9 +389,31 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\Admin.cs" />
+    <Compile Include="BLL\Cart.cs" />
     <Compile Include="BLL\Events.cs" />
+    <Compile Include="BLL\Food.cs" />
+    <Compile Include="BLL\Product.cs" />
+    <Compile Include="BLL\productDetails.cs" />
+    <Compile Include="BLL\Purchase.cs" />
     <Compile Include="BLL\Rewards.cs" />
+    <Compile Include="BLL\TourPackage.cs" />
+    <Compile Include="BLL\updateProduct.cs" />
     <Compile Include="BLL\Users.cs" />
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,8 +428,17 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\AdminDAO.cs" />
+    <Compile Include="DAL\CartDAO.cs" />
+    <Compile Include="DAL\DataAccess.cs" />
     <Compile Include="DAL\EventsDAO.cs" />
+    <Compile Include="DAL\FoodDAO.cs" />
+    <Compile Include="DAL\ProductDAO.cs" />
+    <Compile Include="DAL\productDetailsDAO.cs" />
+    <Compile Include="DAL\PurchaseDAO.cs" />
     <Compile Include="DAL\RewardsDAO.cs" />
+    <Compile Include="DAL\TourPackageDAO.cs" />
+    <Compile Include="DAL\updateProductDAO.cs" />
     <Compile Include="DAL\UsersDAO.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -311,6 +446,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditFood.aspx.cs">
+      <DependentUpon>EditFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditFood.aspx.designer.cs">
+      <DependentUpon>EditFood.aspx</DependentUpon>
     </Compile>
     <Compile Include="Eventpage.aspx.cs">
       <DependentUpon>Eventpage.aspx</DependentUpon>
@@ -326,6 +468,13 @@
     <Compile Include="EventUpdate.aspx.designer.cs">
       <DependentUpon>EventUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FoodInfo.aspx.cs">
+      <DependentUpon>FoodInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FoodInfo.aspx.designer.cs">
+      <DependentUpon>FoodInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FoodMain.aspx.cs">
       <DependentUpon>FoodMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -336,6 +485,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LeftMenuControl.ascx.cs">
+      <DependentUpon>LeftMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftMenuControl.ascx.designer.cs">
+      <DependentUpon>LeftMenuControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,7 +499,42 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="productCreation.aspx.cs">
+      <DependentUpon>productCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productCreation.aspx.designer.cs">
+      <DependentUpon>productCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productDetails.aspx.cs">
+      <DependentUpon>productDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productDetails.aspx.designer.cs">
+      <DependentUpon>productDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductUpdateForm.aspx.cs">
+      <DependentUpon>ProductUpdateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductUpdateForm.aspx.designer.cs">
+      <DependentUpon>ProductUpdateForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductViewForm.aspx.cs">
+      <DependentUpon>ProductViewForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductViewForm.aspx.designer.cs">
+      <DependentUpon>ProductViewForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchase.aspx.cs">
+      <DependentUpon>purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="purchase.aspx.designer.cs">
+      <DependentUpon>purchase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -406,6 +597,13 @@
     </Compile>
     <Compile Include="UpdateReward.aspx.designer.cs">
       <DependentUpon>UpdateReward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPurchases.aspx.cs">
+      <DependentUpon>ViewPurchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPurchases.aspx.designer.cs">
+      <DependentUpon>ViewPurchases.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

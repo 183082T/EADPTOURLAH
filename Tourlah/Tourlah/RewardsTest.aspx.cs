@@ -19,26 +19,5 @@ namespace WebApplication2
         {
             Response.Redirect("UpdateReward.aspx");
         }
-
-        protected void editReward_serverClick(object sender, EventArgs e)
-        {
-            HtmlButton btn = (HtmlButton)sender;
-            string name = btn.Attributes["Name"];
-            string desc = btn.Attributes["Description"];
-            string quantity = btn.Attributes["Quantity"];
-            string amt = btn.Attributes["Amount"];
-            string img = btn.Attributes["Image"];
-            int id = int.Parse(btn.Attributes["idd"]);
-
-            Session["Id"] = id;
-            Session["Name"] = name;
-            Session["Description"] = desc;
-            Session["Quantity"] = quantity;
-            Session["Amount"] = amt;
-            Session["Image"] = img;
-
-            Response.Redirect("UpdateReward.aspx");
-
-        }
     }
 }

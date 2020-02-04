@@ -6,40 +6,67 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using WebApplication2.BLL;
 
 namespace WebApplication2
 {
     public partial class adminLogin : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Documents\GitHub\EADPPROJECTT\Tourlah\TourLah\App_Data\admin.mdf;Integrated Security=True");
-        int i;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void b1_Click(object sender, EventArgs e)
+        protected void BtnAdminLogin_Click(object sender, EventArgs e)
         {
-            i = 0;
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from admin_login where username='" + t1.Text + "'and password='"+t2.Text+"'";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            i = Convert.ToInt32(dt.Rows.Count.ToString());
 
-            if (i == 1)
+            Validation.Visible = true;
+            if (String.IsNullOrEmpty(TbAdminName.Text.ToString()) & (String.IsNullOrEmpty(TbAdminPassword.Text.ToString())))
             {
-                Response.Redirect("adminpage.aspx");
+                Lbl_Msg.Text = "Please do not leave formfields empty";
+                Lbl_Msg.ForeColor = Color.Black;
+                Validation.CssClass = "alert alert-dismissable alert-danger";
             }
+
             else
             {
-                li.Text = "You have entered invalid username or password";
+                Admin ad = new Admin();
+
+                ad = ad.GetAdminByUsername(TbAdminName.Text);
+                if (ad != null)
+
+                {
+                    Validation.Visible = true;
+                    if (TbAdminPassword.Text == ad.AdminPassword)
+                    {
+                        //ccorrect password, logged in to admin
+                        Lbl_Msg.Text = TbAdminName.Text + " Admin Logged in.";
+                        Lbl_Msg.ForeColor = Color.Green;
+                        Validation.CssClass = "alert alert-dismissable alert-success";
+                        Session["adminName"] = TbAdminName.Text;
+                        Response.Redirect("adminHome.aspx");
+
+                    }
+                    else
+                    {
+                        //wrong password
+                        Lbl_Msg.Text = "Incorrect Password";
+                        Validation.CssClass = "alert alert-dismissable alert-danger";
+                        Lbl_Msg.ForeColor = Color.Red;
+                    }
+                }
+
+                //if not registered, display user does not have account
+                else
+                {
+                    Lbl_Msg.Text = "You do not have an admin account";
+                    Validation.CssClass = "alert alert-dismissable alert-danger";
+                    Lbl_Msg.ForeColor = Color.Red;
+                    //error msg
+                }
             }
-            con.Close();
+
         }
     }
 }

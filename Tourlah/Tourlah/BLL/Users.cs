@@ -10,6 +10,7 @@ namespace WebApplication2.BLL
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Points { get; set; }
 
 
         public Users()
@@ -21,6 +22,7 @@ namespace WebApplication2.BLL
         {
             Username = name;
             Password = password;
+            Points = Points;
         }
 
         public int Create()

@@ -30,11 +30,10 @@ namespace WebApplication2.DAL
                 DataRow row = ds.Tables[0].Rows[i];
                 int id = int.Parse(row["id"].ToString());
                 string name = row["reward_name"].ToString();
-                string description = row["reward_desc"].ToString();
                 int amount = int.Parse(row["reward_amt"].ToString());
                 int quantity = int.Parse(row["reward_qty"].ToString());
                 string image = row["reward_image"].ToString();
-                Rewards obj = new Rewards(id, name, description, amount, quantity, image);
+                Rewards obj = new Rewards(id, name, amount, quantity, image);
                 rewList.Add(obj);
             }
             return rewList;
@@ -59,11 +58,10 @@ namespace WebApplication2.DAL
                 DataRow row = ds.Tables[0].Rows[i];
                 int idd = int.Parse(row["id"].ToString());
                 string name = row["reward_name"].ToString();
-                string description = row["reward_desc"].ToString();
                 int amount = int.Parse(row["reward_amt"].ToString());
                 int quantity = int.Parse(row["reward_qty"].ToString());
                 string image = row["reward_image"].ToString();
-                Rewards obj = new Rewards(idd, name, description, amount, quantity, image);
+                Rewards obj = new Rewards(idd, name, amount, quantity, image);
                 rewList.Add(obj);
             }
             return rewList;
@@ -78,12 +76,11 @@ namespace WebApplication2.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "INSERT INTO reward (reward_name, reward_desc, reward_amt, reward_qty, reward_image)" +
-                "VALUES (@paraRewardName, @paraRewardDescription, @paraRewardAmount, @paraRewardQuantity, @paraRewardImage)";
+            string sqlStmt = "INSERT INTO reward (reward_name, reward_amt, reward_qty, reward_image)" +
+                "VALUES (@paraRewardName, @paraRewardAmount, @paraRewardQuantity, @paraRewardImage)";
 
             sqlCmd = new SqlCommand(sqlStmt, myConn);
             sqlCmd.Parameters.AddWithValue("@paraRewardName", rew.reward_name);
-            sqlCmd.Parameters.AddWithValue("@paraRewardDescription", rew.reward_desc);
             sqlCmd.Parameters.AddWithValue("@paraRewardAmount", rew.reward_amt);
             sqlCmd.Parameters.AddWithValue("@paraRewardQuantity", rew.reward_qty);
             sqlCmd.Parameters.AddWithValue("@paraRewardImage", rew.reward_image);
@@ -105,13 +102,11 @@ namespace WebApplication2.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "UPDATE reward SET reward_name = @paraRewardName, reward_desc = @paraRewardDescription, " +
-                "reward_amt = @paraRewardAmount, reward_qty = @paraRewardQuantity WHERE id = @paraid";
+            string sqlStmt = "UPDATE reward SET reward_name = @paraRewardName, reward_amt = @paraRewardAmount, reward_qty = @paraRewardQuantity WHERE id = @paraid";
 
             sqlCmd = new SqlCommand(sqlStmt, myConn);
             sqlCmd.Parameters.AddWithValue("@paraid", rew.idd);
             sqlCmd.Parameters.AddWithValue("@paraRewardName", rew.reward_name);
-            sqlCmd.Parameters.AddWithValue("@paraRewardDescription", rew.reward_desc);
             sqlCmd.Parameters.AddWithValue("@paraRewardAmount", rew.reward_amt);
             sqlCmd.Parameters.AddWithValue("@paraRewardQuantity", rew.reward_qty);
 

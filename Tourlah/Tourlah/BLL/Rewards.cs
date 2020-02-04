@@ -10,7 +10,6 @@ namespace WebApplication2.BLL
     {
         public int idd { get; set; }
         public string reward_name { get; set; }
-        public string reward_desc { get; set; }
         public int reward_amt { get; set; }
         public int reward_qty { get; set; }
         public string reward_image { get; set; }
@@ -20,20 +19,18 @@ namespace WebApplication2.BLL
 
         }
 
-        public Rewards(int id, string rewardName, string rewardDesc, int rewardAmt, int rewardQty, string rewardImg)
+        public Rewards(int id, string rewardName, int rewardAmt, int rewardQty, string rewardImg)
         {
             this.idd = id;
             this.reward_name = rewardName;
-            this.reward_desc = rewardDesc;
             this.reward_amt = rewardAmt;
             this.reward_qty = rewardQty;
             this.reward_image = rewardImg;
         }
 
-        public Rewards(string rewardName, string rewardDesc, int rewardAmt, int rewardQty, string rewardImg)
+        public Rewards(string rewardName, int rewardAmt, int rewardQty, string rewardImg)
         {
             this.reward_name = rewardName;
-            this.reward_desc = rewardDesc;
             this.reward_amt = rewardAmt;
             this.reward_qty = rewardQty;
             this.reward_image = rewardImg;

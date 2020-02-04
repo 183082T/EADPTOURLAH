@@ -22,15 +22,6 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.TextBox tbrn;
         
         /// <summary>
-        /// tbrd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbrd;
-        
-        /// <summary>
         /// tbra control.
         /// </summary>
         /// <remarks>

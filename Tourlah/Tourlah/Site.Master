@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication2.SiteMaster" %>
 
+<%@ Register src="LeftMenuControl.ascx" tagname="LeftMenuControl" tagprefix="uc1" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -114,12 +115,13 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/"></a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Eventmain">Events</a></li>
-                        <li><a runat="server" href="~/">Food</a></li>
+                        <li><a runat="server" href="~/FoodMain">Food</a></li>
                         <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
-                        <li><a runat="server" href="~/Shop">Shop</a></li>
+                        <li><a runat="server" href="~/ViewPurchases">View Purchase Log</a></li>
+                        <li><a runat="server" href="~/Category">Shop</a></li>
+                        <li><a runat="server" href="~/Cart">Cart</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" id="rewardsDropdown" data-toggle="dropdown">
                                 Rewards<span class="caret"></span></a>
@@ -131,7 +133,7 @@
                         <li><a runat="server" href="~/TEssential">Traveller Essentials</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Login">Login/Sign Up</a></li>
+                         <li><a><asp:Button runat="server" style="background-color:transparent;color:white; border:none;" Text="Login/Sign Up" ID="Login" OnClick="Login_Click"></asp:Button></a></li>
                     </ul>
                 </div>
             </div>
@@ -155,7 +157,7 @@
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
     <script>

@@ -17,7 +17,6 @@ namespace WebApplication2
             if (!IsPostBack)
             {
                 tbrn.Text = (string)Session["Name"];
-                tbrd.Text = (string)Session["Description"];
                 tbqty.Text = (string)Session["Quantity"];
                 tbra.Text = (string)Session["Amount"];
                 hidimg.Text = (string)Session["Image"];
@@ -27,7 +26,7 @@ namespace WebApplication2
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
 
-            Rewards rew = new Rewards( int.Parse(Session["id"].ToString()), tbrn.Text.ToString(), tbrd.Text.ToString(), int.Parse(tbra.Text.ToString()), int.Parse(tbqty.Text.ToString()), hidimg.ToString());
+            Rewards rew = new Rewards( int.Parse(Session["id"].ToString()), tbrn.Text.ToString(), int.Parse(tbra.Text.ToString()), int.Parse(tbqty.Text.ToString()), hidimg.ToString());
             int result = rew.UpdateReward();
             if (result == 1)
             {

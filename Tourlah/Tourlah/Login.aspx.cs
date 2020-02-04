@@ -20,44 +20,51 @@ namespace WebApplication2
 
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
-            Users use = new Users();
             Validation.Visible = true;
-            bool loggedStatus;
-
-
-            //if username has registered
-            use = use.GetUsersByUsername(TbUsername.Text);
-            if (use != null)
-
+            if (String.IsNullOrEmpty(TbUsername.Text.ToString()) & (String.IsNullOrEmpty(TbPassword.Text.ToString())))
             {
-                if (TbPassword.Text == use.Password)
-                {
-                    //ccorrect password, logged in
-                    Lbl_Msg.Text = "Logged in";
-                    Lbl_Msg.ForeColor = Color.Green;
-                    Validation.CssClass = "alert alert-dismissable alert-success";
-                    loggedStatus = true;
-                    Session["userName"] = TbUsername.Text;
-                    Session["Logged"] = loggedStatus;
-                    Response.Redirect("Checkout.aspx");
-                }
-                else
-                {
-                    //wrong password
-                    Lbl_Msg.Text = "Incorrect Password";
-                    Lbl_Msg.ForeColor = Color.Red;
-                    loggedStatus = false;
-                    Session["Logged"] = loggedStatus;
-
-                }
+                Lbl_Msg.Text = "Please do not leave formfields empty";
+                Validation.CssClass = "alert alert-dismissable alert-danger";
+                Lbl_Msg.ForeColor = Color.Red;
             }
 
-            //if not registered, display user does not have account
-            else
+            else  //if no empty fields, check db
             {
-                Lbl_Msg.Text = "User does not have a account";
-                Lbl_Msg.ForeColor = Color.Red;
-                //error msg
+
+                Users use = new Users();
+
+
+                use = use.GetUsersByUsername(TbUsername.Text);
+                if (use != null)//if username has registered in db
+
+                {
+                    if (TbPassword.Text == use.Password)
+                    {
+                        //ccorrect password, logged in
+
+                        Lbl_Msg.ForeColor = Color.Green;
+                        Session["isUserLoggedIn"] = true;
+                        Session["userName"] = TbUsername.Text;
+                        Session["loginsuccess"] = TbUsername.Text + " is logged in";
+                        Response.Redirect("About.aspx");
+                    }
+                    else
+                    {
+                        //wrong password
+                        Lbl_Msg.Text = "Incorrect Password";
+                        Validation.CssClass = "alert alert-dismissable alert-danger";
+                        Lbl_Msg.ForeColor = Color.Red;
+
+                    }
+                }
+                //if not registered, display user does not have account
+                else
+                {
+                    Lbl_Msg.Text = "User does not have a account";
+                    Validation.CssClass = "alert alert-dismissable alert-warning";
+                    Lbl_Msg.ForeColor = Color.Red;
+                    //error msg
+                }
             }
         }
     }
