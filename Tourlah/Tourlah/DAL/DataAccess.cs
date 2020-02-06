@@ -8,14 +8,14 @@ using System.Web.Configuration;
 
 namespace WebApplication2.DAL
 {
-    public class DataAccess
+    public class S
     {
         private static string myConnectionString;
 
-        static DataAccess()
-        {
-            myConnectionString = WebConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-        }
+        //static DataAccess()
+        //{
+        //    myConnectionString = WebConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+        //}
 
         public static DataTable selectQuery(string query)
         {

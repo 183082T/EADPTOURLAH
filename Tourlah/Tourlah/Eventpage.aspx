@@ -24,7 +24,9 @@
                 <asp:Label ID="Maintypelbl" runat="server"></asp:Label>
                 ,<asp:Label ID="Secondtypelbl" runat="server"></asp:Label>
             </td>
-            <td style="height: 84px"></td>
+            <td style="height: 84px">
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+            </td>
         </tr>
     </table>
 </asp:Content>
