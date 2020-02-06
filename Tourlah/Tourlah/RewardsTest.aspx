@@ -30,13 +30,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="detailsBtn" runat="server" data-toggle="modal" Style="border-radius: 35px; margin-top: 15px;" Text="Details"></asp:Button>
+                        <a id="details" href="RewardsTest.aspx?rewardid=<%# Eval("id") %>" Style="border-radius: 35px; margin-top: 15px;">Details</a>
+                        <%--<asp:Button ID="detailsBtn" runat="server" data-toggle="modal" Style="border-radius: 35px; margin-top: 15px;" Text="Details"></asp:Button>--%>
                     </td>
                 </tr>
             </table>
         </ItemTemplate>
         <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
     </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [reward_name], [reward_amt], [reward_qty], [reward_image] FROM [reward]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [id] , [reward_name], [reward_amt], [reward_qty], [reward_image] FROM [reward]"></asp:SqlDataSource>
 
 </asp:Content>

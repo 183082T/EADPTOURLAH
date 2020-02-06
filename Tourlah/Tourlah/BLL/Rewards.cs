@@ -48,6 +48,12 @@ namespace WebApplication2.BLL
             return dao.SelectOne(id);
         }
 
+        public Rewards Choose(string id)
+        {
+            RewardsDAO dao = new RewardsDAO();
+            return dao.ChooseOne(id);
+        }
+
         public int CreateReward()
         {
             RewardsDAO dao = new RewardsDAO();
@@ -60,6 +66,11 @@ namespace WebApplication2.BLL
             RewardsDAO dao = new RewardsDAO();
             int result = dao.UpdateReward(this);
             return result;
+        }
+
+        public int decreasequantity(string userid,string rewardqty )
+        {
+            return RewardsDAO.updatedecreasequantity(userid,rewardqty );
         }
     }
 }
