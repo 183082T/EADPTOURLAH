@@ -397,6 +397,7 @@
     <Compile Include="BLL\productDetails.cs" />
     <Compile Include="BLL\Purchase.cs" />
     <Compile Include="BLL\Rewards.cs" />
+    <Compile Include="BLL\SavedEvents.cs" />
     <Compile Include="BLL\TourPackage.cs" />
     <Compile Include="BLL\updateProduct.cs" />
     <Compile Include="BLL\Users.cs" />
@@ -430,6 +431,7 @@
     </Compile>
     <Compile Include="DAL\AdminDAO.cs" />
     <Compile Include="DAL\CartDAO.cs" />
+    <Compile Include="DAL\SavedEventsDAO.cs" />
     <Compile Include="DAL\DataAccess.cs" />
     <Compile Include="DAL\EventsDAO.cs" />
     <Compile Include="DAL\FoodDAO.cs" />
