@@ -20,13 +20,14 @@ namespace WebApplication2
                 tbqty.Text = (string)Session["Quantity"];
                 tbra.Text = (string)Session["Amount"];
                 hidimg.Text = (string)Session["Image"];
+                tbtype.Text = (string)Session["Type"];
             }
         }
 
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
 
-            Rewards rew = new Rewards( int.Parse(Session["id"].ToString()), tbrn.Text.ToString(), int.Parse(tbra.Text.ToString()), int.Parse(tbqty.Text.ToString()), hidimg.ToString());
+            Rewards rew = new Rewards( int.Parse(Session["id"].ToString()), tbrn.Text.ToString(), int.Parse(tbra.Text.ToString()), int.Parse(tbqty.Text.ToString()),tbtype.Text.ToString(), hidimg.ToString());
             int result = rew.UpdateReward();
             if (result == 1)
             {

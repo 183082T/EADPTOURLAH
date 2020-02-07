@@ -18,6 +18,12 @@
                     <asp:TextBox ID="rq" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
+                <td>Reward Type:</td>
+                <td>
+                    <asp:TextBox ID="rt" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
                 <td>Reward Image:</td>
                 <td>
                     <asp:FileUpload ID="ri" runat="server" /></td>

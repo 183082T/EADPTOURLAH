@@ -33,7 +33,8 @@ namespace WebApplication2.DAL
                 int amount = int.Parse(row["reward_amt"].ToString());
                 int quantity = int.Parse(row["reward_qty"].ToString());
                 string image = row["reward_image"].ToString();
-                Rewards obj = new Rewards(id, name, amount, quantity, image);
+                string type = row["reward_type"].ToString();
+                Rewards obj = new Rewards(id, name, amount, quantity, image, type);
                 rewList.Add(obj);
             }
             return rewList;
@@ -61,7 +62,8 @@ namespace WebApplication2.DAL
                 int amount = int.Parse(row["reward_amt"].ToString());
                 int quantity = int.Parse(row["reward_qty"].ToString());
                 string image = row["reward_image"].ToString();
-                Rewards obj = new Rewards(idd, name, amount, quantity, image);
+                string type = row["reward_type"].ToString();
+                Rewards obj = new Rewards(idd, name, amount, quantity, image, type);
                 rewList.Add(obj);
             }
             return rewList;
@@ -74,6 +76,7 @@ namespace WebApplication2.DAL
             int amount = int.Parse(rd["reward_amt"].ToString());
             int quantity = int.Parse(rd["reward_qty"].ToString());
             string image = rd["reward_image"].ToString();
+            string type = rd["reward_type"].ToString();
 
 
             Rewards rw = new Rewards
@@ -82,7 +85,8 @@ namespace WebApplication2.DAL
                 reward_name = name,
                 reward_amt = amount,
                 reward_qty = quantity,
-                reward_image = image
+                reward_image = image,
+                reward_type = type
             };
             return rw;
 
@@ -117,14 +121,15 @@ namespace WebApplication2.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "INSERT INTO reward (reward_name, reward_amt, reward_qty, reward_image)" +
-                "VALUES (@paraRewardName, @paraRewardAmount, @paraRewardQuantity, @paraRewardImage)";
+            string sqlStmt = "INSERT INTO reward (reward_name, reward_amt, reward_qty, reward_image, reward_type)" +
+                "VALUES (@paraRewardName, @paraRewardAmount, @paraRewardQuantity, @paraRewardImage, @paraRewardType)";
 
             sqlCmd = new SqlCommand(sqlStmt, myConn);
             sqlCmd.Parameters.AddWithValue("@paraRewardName", rew.reward_name);
             sqlCmd.Parameters.AddWithValue("@paraRewardAmount", rew.reward_amt);
             sqlCmd.Parameters.AddWithValue("@paraRewardQuantity", rew.reward_qty);
             sqlCmd.Parameters.AddWithValue("@paraRewardImage", rew.reward_image);
+            sqlCmd.Parameters.AddWithValue("@paraRewardType", rew.reward_type);
 
             myConn.Open();
             result = sqlCmd.ExecuteNonQuery();

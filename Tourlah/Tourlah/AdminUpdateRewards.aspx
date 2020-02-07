@@ -23,18 +23,18 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="w3-center" style="height: 20px">
+                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("reward_type") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="w3-center"><strong>
                             <img src="Images/ic-shuga.svg" /><asp:Label ID="Label4" runat="server" Text='<%# Eval("reward_amt") %>'></asp:Label>
                         </strong></td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="detailsBtn" runat="server" data-toggle="modal" Style="border-radius: 35px; margin-top:15px;" Text="Details"></asp:Button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button idd='<%# Eval("id") %>' name='<%# Eval("reward_name") %>' image='<%# Eval("reward_image") %>' description='<%# Eval("reward_desc") %>' quantity='<%# Eval("reward_qty") %>' amount='<%# Eval("reward_amt") %>' runat="server" type="button" onserverclick="editReward_serverClick">Edit</button> 
+                            <button idd='<%# Eval("id") %>' name='<%# Eval("reward_name") %>' image='<%# Eval("reward_image") %>' quantity='<%# Eval("reward_qty") %>' amount='<%# Eval("reward_amt") %>' runat="server" type="button" onserverclick="editReward_serverClick">Edit</button> 
                         </td>
                     </tr>
                 </table>
