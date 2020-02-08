@@ -26,7 +26,7 @@ namespace WebApplication2
             {
                 Lbl_Msg.Text = "Please do not leave formfields empty";
                 Lbl_Msg.ForeColor = Color.Black;
-                Validation.CssClass = "alert alert-dismissable alert-warning";
+                Validation.CssClass = "alert alert-dismissable alert-danger";
             }
 
             else
@@ -61,7 +61,7 @@ namespace WebApplication2
                 else
                 {
                     Lbl_Msg.Text = "You do not have an admin account";
-                    Validation.CssClass = "alert alert-dismissable alert-warning";
+                    Validation.CssClass = "alert alert-dismissable alert-danger";
                     Lbl_Msg.ForeColor = Color.Red;
                     //error msg
                 }

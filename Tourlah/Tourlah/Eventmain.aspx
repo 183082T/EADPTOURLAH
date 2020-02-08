@@ -3,6 +3,7 @@
    
     <asp:GridView ID="EventGV" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="table table-bordered" AutoGenerateColumns="False">
         <Columns>
+            <asp:BoundField DataField="Id" HeaderText="Eventid" />
             <asp:BoundField DataField="EventName" HeaderText="Name of Event" ReadOnly="True" />
             <asp:BoundField DataField="EventDescription" HeaderText="Description" ReadOnly="True" />
             <asp:BoundField DataField="EventDate" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Date" ReadOnly="True" />

@@ -14,11 +14,6 @@ namespace WebApplication2
 
         }
 
-        protected void ButtonEdit_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("EditFood.aspx");
-        }
-
         protected void ButtonBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("FoodMain.aspx");

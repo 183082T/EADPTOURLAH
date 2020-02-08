@@ -31,11 +31,11 @@ namespace WebApplication2
                     string path = Server.MapPath("~/Images/");
                     ri.SaveAs(Server.MapPath("~/Images/" + ri.FileName));
 
-                    Rewards rew = new Rewards(rn.Text.ToString(), int.Parse(ra.Text.ToString()), int.Parse(rq.Text.ToString()), filename);
+                    Rewards rew = new Rewards(rn.Text.ToString(), int.Parse(ra.Text.ToString()), int.Parse(rq.Text.ToString()), filename, rt.Text.ToString());
                     int result = rew.CreateReward();
                     if (result == 1)
                     {
-                        Response.Redirect("RewardsTest.aspx");
+                        Response.Redirect("AdminUpdateRewards.aspx");
                     }
                 }
                 else

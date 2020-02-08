@@ -24,7 +24,7 @@ namespace WebApplication2
             if (String.IsNullOrEmpty(TbUsername.Text.ToString()) & (String.IsNullOrEmpty(TbPassword.Text.ToString())))
             {
                 Lbl_Msg.Text = "Please do not leave formfields empty";
-                Validation.CssClass = "alert alert-dismissable alert-warning";
+                Validation.CssClass = "alert alert-dismissable alert-danger";
                 Lbl_Msg.ForeColor = Color.Red;
             }
 
@@ -41,12 +41,11 @@ namespace WebApplication2
                     if (TbPassword.Text == use.Password)
                     {
                         //ccorrect password, logged in
-                        Lbl_Msg.Text = TbUsername.Text + " Logged in";
-                        Lbl_Msg.ForeColor = Color.Green;
-                        Validation.CssClass = "alert alert-dismissable alert-success";
-                        Session["isUserLoggedIn"] = true;
 
+                        Lbl_Msg.ForeColor = Color.Green;
+                        Session["isUserLoggedIn"] = true;
                         Session["userName"] = TbUsername.Text;
+                        Session["loginsuccess"] = TbUsername.Text + " is logged in";
                         Response.Redirect("About.aspx");
                     }
                     else

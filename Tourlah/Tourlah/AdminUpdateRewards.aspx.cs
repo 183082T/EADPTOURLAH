@@ -22,12 +22,14 @@ namespace WebApplication2
             string amt = btn.Attributes["Amount"];
             string img = btn.Attributes["Image"];
             int id = int.Parse(btn.Attributes["idd"]);
+            string type = btn.Attributes["Type"];
 
             Session["Id"] = id;
             Session["Name"] = name;
             Session["Quantity"] = quantity;
             Session["Amount"] = amt;
             Session["Image"] = img;
+            Session["Type"] = type;
 
             Response.Redirect("UpdateReward.aspx");
 

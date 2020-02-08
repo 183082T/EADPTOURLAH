@@ -5,7 +5,7 @@
     <br />
 
     <div style="width: 40%; margin: 0 auto;">
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BorderStyle="None" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BorderStyle="None">
             <ItemTemplate>
                 <table style="width: 100%">
                     <tr>
@@ -40,16 +40,16 @@
                     <tr>
                         <td class="w3-center" style="height: 60px">
                             &nbsp;</td>
-                        <td class="w3-center" style="height: 60px" colspan="2">
+                        <td class="w3-center" style="height: 60px">
                             &nbsp;</td>
                         <td class="w3-center" style="height: 60px">
                             &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="w3-center" style="height: 60px">
+                        <td class="w3-center" style="height: 60px; width: 69px;">
                             <asp:Label ID="Label2" runat="server" BackColor="White" Text='<%# Eval("placeName") %>'></asp:Label>
                         </td>
-                        <td class="w3-center" colspan="2" style="height: 60px">
+                        <td class="w3-center" style="height: 60px">
                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("placeName2") %>'></asp:Label>
                         </td>
                         <td class="w3-center" style="height: 60px">
@@ -58,14 +58,14 @@
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
-                        <td class="w3-center" colspan="2" style="height: 60px">&nbsp;</td>
+                        <td class="w3-center" style="height: 60px">&nbsp;</td>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 60px">
                             <asp:Label ID="Label5" runat="server" Text='<%# Eval("placeInfo") %>'></asp:Label>
                         </td>
-                        <td class="w3-center" style="height: 60px" colspan="2">
+                        <td class="w3-center" style="height: 60px">
                             <asp:Label ID="Label6" runat="server" Text='<%# Eval("placeInfo2") %>'></asp:Label>
                         </td>
                         <td class="w3-center" style="height: 60px">
@@ -74,14 +74,14 @@
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
-                        <td class="w3-center" colspan="2" style="height: 60px">&nbsp;</td>
+                        <td class="w3-center" style="height: 60px">&nbsp;</td>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 60px">
                             <asp:Label ID="Label8" runat="server" Text='<%# Eval("placeAdd") %>'></asp:Label>
                         </td>
-                        <td class="w3-center" style="height: 60px" colspan="2">
+                        <td class="w3-center" style="height: 60px">
                             <asp:Label ID="Label9" runat="server" Text='<%# Eval("placeAdd2") %>'></asp:Label>
                         </td>
                         <td class="w3-center" style="height: 60px">
@@ -90,25 +90,22 @@
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
-                        <td class="w3-center" colspan="2" style="height: 60px">&nbsp;</td>
+                        <td class="w3-center" style="height: 60px">&nbsp;</td>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="w3-center" colspan="2" style="height: 60px">
-                            <asp:Button FoodID='<%# Eval("ID") %>' ID="ButtonEdit" runat="server" BackColor="Lime" ForeColor="Black" Height="43px" OnClick="ButtonEdit_Click" Text="Edit" Width="144px" />
-                        </td>
-                        <td class="w3-center" colspan="2" style="height: 60px">
+                        <td class="w3-center" colspan="3" style="height: 60px">
                             <asp:Button ID="ButtonBack" runat="server" BackColor="#66CCFF" Height="43px" OnClick="ButtonBack_Click" Text="Back" Width="144px" />
                         </td>
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
-                        <td class="w3-center" colspan="2" style="height: 60px">&nbsp;</td>
+                        <td class="w3-center" style="height: 60px">&nbsp;</td>
                         <td class="w3-center" style="height: 60px">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="w3-center">&nbsp;</td>
-                        <td class="w3-center" colspan="2">&nbsp;</td>
+                        <td class="w3-center">&nbsp;</td>
                         <td class="w3-center">&nbsp;</td>
                     </tr>
                 </table>

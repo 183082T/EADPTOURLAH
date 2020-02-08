@@ -34,13 +34,14 @@ namespace WebApplication2.DAL
             for (int i = 0; i < rec_cnt; i++)
             {
                 DataRow row = ds.Tables[0].Rows[i];  // Sql command returns only one record
+                int id = Convert.ToInt16(row["id"].ToString());
                 string eventname = row["eventname"].ToString();
                 string eventdescription = row["eventdescription"].ToString();
                 DateTime eventdate = Convert.ToDateTime(row["eventdate"].ToString());
                 string maintype = row["maintype"].ToString();
                 string secondtype = row["secondtype"].ToString();
                 string location = row["location"].ToString(); ;
-                Events obj = new Events(eventname,eventdescription,eventdate,maintype,secondtype,location);
+                Events obj = new Events(id,eventname,eventdescription,eventdate,maintype,secondtype,location);
                 eventList.Add(obj);
             }
 
@@ -54,7 +55,7 @@ namespace WebApplication2.DAL
 
             //Step 1 -  Define a connection to the database by getting
             //          the connection string from web.config
-            string DBConnect = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             // Step 2 - Instantiate SqlCommand instance to add record 
@@ -80,5 +81,6 @@ namespace WebApplication2.DAL
 
             return result;
         }
+        
     }
 }

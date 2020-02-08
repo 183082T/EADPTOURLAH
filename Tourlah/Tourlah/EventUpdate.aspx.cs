@@ -11,9 +11,11 @@ namespace WebApplication2
 {
     public partial class EventUpdate : System.Web.UI.Page
     {
+        public int EventId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EventId = 1;
         }
 
 
@@ -32,7 +34,7 @@ namespace WebApplication2
         {
             Events eve = new Events();
             DateTime eventTime = Convert.ToDateTime(Tbdate.Text);
-            eve = new Events(TbName.Text, Tbdescription.Text, eventTime, TbName.Text, TbSecondtype.Text, Tblocation.Text);
+            eve = new Events(EventId,TbName.Text, Tbdescription.Text, eventTime, TbName.Text, TbSecondtype.Text, Tblocation.Text);
             int result = eve.AddEvent();
             if (result == 1)
             {

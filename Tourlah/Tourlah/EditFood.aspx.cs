@@ -74,7 +74,7 @@ namespace WebApplication2
 
         protected void ButtonBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FoodMain.aspx");
+            Response.Redirect("AdminFoodMain.aspx");
         }
     }
 }

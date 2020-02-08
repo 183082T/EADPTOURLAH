@@ -25,7 +25,7 @@
         <br />
 
         <div style="width: 65%; margin: 0 auto;">
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="5px" CellPadding="10" CellSpacing="70" ForeColor="#FF9966" Height="490px" RepeatColumns="4" RepeatDirection="Horizontal" Width="863px" style="margin-left: 0px" OnItemCommand="DataList1_ItemCommand">
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="5px" CellPadding="10" CellSpacing="70" ForeColor="#FF9966" Height="490px" RepeatColumns="4" RepeatDirection="Horizontal" Width="863px" style="margin-left: 0px" OnItemCommand="DataList1_ItemCommand">
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                 <ItemStyle BackColor="White" />
@@ -66,7 +66,6 @@
         <br />
 
         <div class="container justify-content-center">
-            <asp:Button ID="ButtonAdd" runat="server" Text="Add Food Item" OnClick="ButtonAdd_Click" BackColor="#99FF33" Height="43px" Width="144px" />
         </div>
 
         <br />

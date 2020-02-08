@@ -17,11 +17,6 @@ namespace WebApplication2
        
         }
 
-        protected void ButtonAdd_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddFood.aspx");
-        }
-
         protected void ButtonInfo_Click(object sender, EventArgs e)
         {
             HtmlButton btn = (HtmlButton)sender;

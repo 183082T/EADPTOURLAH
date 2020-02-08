@@ -20,12 +20,13 @@ namespace WebApplication2
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = EventGV.SelectedRow;
-            Session["Event Name"] = row.Cells[0].Text;
-            Session["Event Description "] = row.Cells[1].Text;
-            Session["Event Dates"] = row.Cells[2].Text;
-            Session["Event MainType"] = row.Cells[3].Text;
-            Session["Event SecondType"] = row.Cells[4].Text;
-            Session["Event Location"] = row.Cells[5].Text;
+            Session["Event Id"] = row.Cells[0].Text;
+            Session["Event Name"] = row.Cells[1].Text;
+            Session["Event Description"] = row.Cells[2].Text;
+            Session["Event Dates"] = row.Cells[3].Text;
+            Session["Event MainType"] = row.Cells[4].Text;
+            Session["Event SecondType"] = row.Cells[5].Text;
+            Session["Event Location"] = row.Cells[6].Text;
             Response.Redirect("Eventpage.aspx");
 
         }
