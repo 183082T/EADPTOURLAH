@@ -21,14 +21,14 @@ namespace WebApplication2.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
 
-            string sqlStmt = "INSERT INTO Users ( name, password, points) " +
-                "VALUES (@pararegisterUsername,@pararegisterPassword, @pararegisterPoints)";
+            string sqlStmt = "INSERT INTO Users ( name, password,) " +
+                "VALUES (@pararegisterUsername,@pararegisterPassword)";
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
 
             sqlCmd.Parameters.AddWithValue("@pararegisterUsername", use.Username);
             sqlCmd.Parameters.AddWithValue("@pararegisterPassword", use.Password);
-            sqlCmd.Parameters.AddWithValue("@pararegisterPoints", use.Points);
+            
 
 
 
@@ -44,13 +44,13 @@ namespace WebApplication2.DAL
         {
             string name = rd["name"].ToString();
             string password = rd["password"].ToString();
-            string points = rd["points"].ToString();
+            
 
             Users use = new Users
             {
                 Username = name,
                 Password = password,
-                Points = points
+                
             };
             return use;
 

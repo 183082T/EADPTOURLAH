@@ -11,7 +11,7 @@ namespace WebApplication2
     public partial class Eventpage : System.Web.UI.Page
     {
         public string Username;
-        public int EventId;
+        public string EventId;
         protected void Page_Load(object sender, EventArgs e)
         {
             Eventlbl.Text = (string)Session["Event Name"];
@@ -21,14 +21,14 @@ namespace WebApplication2
             Maintypelbl.Text = (string)Session["Event MainType"];
             Secondtypelbl.Text = (string)Session["Event SecondType"];
             Username = (string)Session["userName"];
-            EventId = (int)Session["Event Id"];
+            EventId = (string)Session["Event Id"];
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             SavedEvents Seve = new SavedEvents();
 
-            Seve = new SavedEvents(Username, EventId.ToString());
+            Seve = new SavedEvents(Username, EventId);
             int result = Seve.FavouriteEvent();
         }
     }
