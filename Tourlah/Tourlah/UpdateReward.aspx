@@ -21,6 +21,12 @@
             </td>
         </tr>
         <tr>
+            <td>Reward Type:</td>
+            <td>
+                <asp:TextBox ID="tbtype" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
             <td>&nbsp</td>
             <td>
                 <asp:Label runat="server" ID="hidimg" Visible="false"></asp:Label>

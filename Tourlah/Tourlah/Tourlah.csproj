@@ -126,6 +126,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
+    <Content Include="Content\aos.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -182,7 +183,9 @@
     <Content Include="Images\cs1.jpg" />
     <Content Include="Images\cs2.jpg" />
     <Content Include="Images\currency.jpg" />
+    <Content Include="Images\Events.jpg" />
     <Content Include="Images\filter.gif" />
+    <Content Include="Images\Food.jpg" />
     <Content Include="Images\handicap.jpg" />
     <Content Include="Images\I1.jpg" />
     <Content Include="Images\I2.jpg" />
@@ -200,12 +203,15 @@
     <Content Include="Images\numbers.jpg" />
     <Content Include="Images\powerPlug.jpg" />
     <Content Include="Images\receipt.svg" />
+    <Content Include="Images\Rewards.png" />
     <Content Include="Images\rotiprata.jpg" />
     <Content Include="Images\scan.svg" />
+    <Content Include="Images\Shop.jpg" />
     <Content Include="Images\shop.svg" />
     <Content Include="Images\smoking.jpg" />
     <Content Include="Images\taxRefund.jpg" />
     <Content Include="Images\Tipping.jpg" />
+    <Content Include="Images\Tour.jpg" />
     <Content Include="Images\water.jpg" />
     <Content Include="Images\weather.jpg" />
     <Content Include="Images\wifi.jpg" />
@@ -218,6 +224,7 @@
     <Content Include="Register.aspx" />
     <Content Include="RewardsPage.aspx" />
     <Content Include="RewardsTest.aspx" />
+    <Content Include="Scripts\aos.js" />
     <Content Include="Scripts\counter.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="TEssential.aspx" />

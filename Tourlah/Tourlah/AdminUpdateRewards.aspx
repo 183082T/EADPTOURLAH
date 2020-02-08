@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="AdminUpdateRewards.aspx.cs" Inherits="WebApplication2.AdminUpdateRewards" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" cssClass="text-center" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" 
-            BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both" Height="573px" RepeatColumns="4" RepeatDirection="Horizontal" Width="957px" 
+    <div class="container">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" CssClass="text-center" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid"
+            BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both" Height="573px" RepeatColumns="5" RepeatDirection="Horizontal" Width="957px"
             Style="color: #FF0066; background-color: #000099">
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -29,17 +31,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="detailsBtn" runat="server" data-toggle="modal" Style="border-radius: 35px; margin-top:15px;" Text="Details"></asp:Button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button idd='<%# Eval("id") %>' name='<%# Eval("reward_name") %>' image='<%# Eval("reward_image") %>' description='<%# Eval("reward_desc") %>' quantity='<%# Eval("reward_qty") %>' amount='<%# Eval("reward_amt") %>' runat="server" type="button" onserverclick="editReward_serverClick">Edit</button> 
+                            <button idd='<%# Eval("id") %>' name='<%# Eval("reward_name") %>' image='<%# Eval("reward_image") %>' quantity='<%# Eval("reward_qty") %>' amount='<%# Eval("reward_amt") %>' runat="server" type="button" onserverclick="editReward_serverClick">Edit</button>
                         </td>
                     </tr>
                 </table>
             </ItemTemplate>
             <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
         </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [id], [reward_name], [reward_amt], [reward_qty], [reward_image] FROM [reward]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [id], [reward_name], [reward_amt], [reward_qty], [reward_image] FROM [reward]"></asp:SqlDataSource>
+    </div>
 </asp:Content>
