@@ -20,6 +20,8 @@
     <link href="Content/mobirise-icons.css" rel="stylesheet" />
     <link href="Content/tether.min.css" rel="stylesheet" />
     <link href="Content/mbr-additional.css" rel="stylesheet" />
+    <link href="Content/aos.css" rel="stylesheet" />
+    <script src="Scripts/aos.js"></script>
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/scripts/jquery.min.js">
         $(document).ready(function() {
@@ -118,13 +120,17 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Eventmain">Events</a></li>
                         <li><a runat="server" href="~/FoodMain">Food</a></li>
-                        <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
-                        <li><a runat="server" href="~/ViewPurchases">View Purchase Log</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="tourpackageDropdown" data-toggle="dropdown">Tour<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="tourpackageDropdown">
+                                <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
+                                <li><a runat="server" href="~/ViewPurchases">View Purchase Log</a></li>
+                            </ul>
+                        </li>
                         <li><a runat="server" href="~/Category">Shop</a></li>
                         <li><a runat="server" href="~/Cart">Cart</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="rewardsDropdown" data-toggle="dropdown">
-                                Rewards<span class="caret"></span></a>
+                            <a class="dropdown-toggle" href="#" id="rewardsDropdown" data-toggle="dropdown">Rewards<span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="rewardsDropdown">
                                 <li><a class="dropdown-item" runat="server" href="~/Works">How It Works</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/RewardsTest">Rewards</a></li>

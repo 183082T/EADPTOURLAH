@@ -35,22 +35,86 @@ namespace WebApplication2
 
         protected void DdlSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(Filter.SelectedIndex == 0)
+            if(Order.SelectedIndex == 0)
             {
+                if(Filter.SelectedIndex == 0)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward order by reward_amt asc";
+                }
                 if(Filter.SelectedIndex == 1)
                 {
-                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Cash'";
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Cash' order by reward_amt asc";
                 }
-                if(Filter.SelectedIndex == 2)
+                else if(Filter.SelectedIndex == 2)
                 {
-                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Voucher'";
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Voucher' order by reward_amt asc";
                 }
-                if(Filter.SelectedIndex == 3)
+                else if(Filter.SelectedIndex == 3)
                 {
-                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Gift'";
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Gift' order by reward_amt asc";
                 }
             }
+            else
+            {
+                if (Filter.SelectedIndex == 0)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward order by reward_amt desc";
+                }
+                if (Filter.SelectedIndex == 1)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Cash' order by reward_amt desc";
+                }
+                else if (Filter.SelectedIndex == 2)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Voucher' order by reward_amt desc";
+                }
+                else if (Filter.SelectedIndex == 3)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Gift' order by reward_amt desc";
+                }
+            }
+        }
 
+        protected void DdlOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Order.SelectedIndex == 0)
+            {
+                if (Filter.SelectedIndex == 0)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward order by reward_amt asc";
+                }
+                if (Filter.SelectedIndex == 1)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Cash' order by reward_amt asc";
+                }
+                else if (Filter.SelectedIndex == 2)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Voucher' order by reward_amt asc";
+                }
+                else if (Filter.SelectedIndex == 3)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Gift' order by reward_amt asc";
+                }
+            }
+            else
+            {
+                if (Filter.SelectedIndex == 0)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward order by reward_amt desc";
+                }
+                if (Filter.SelectedIndex == 1)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Cash' order by reward_amt desc";
+                }
+                else if (Filter.SelectedIndex == 2)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Voucher' order by reward_amt desc";
+                }
+                else if (Filter.SelectedIndex == 3)
+                {
+                    SqlDataSource1.SelectCommand = "select * from reward where reward_type='Gift' order by reward_amt desc";
+                }
+            }
         }
     }
 }

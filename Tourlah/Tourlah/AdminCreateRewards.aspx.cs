@@ -35,7 +35,7 @@ namespace WebApplication2
                     int result = rew.CreateReward();
                     if (result == 1)
                     {
-                        Response.Redirect("RewardsTest.aspx");
+                        Response.Redirect("AdminUpdateRewards.aspx");
                     }
                 }
                 else

@@ -29,7 +29,7 @@ namespace WebApplication2.BLL
             this.reward_qty = rewardQty;
             this.reward_image = rewardImg;
             this.reward_type = rewardType;
-            this.reward_points = ComputePoints();
+            //this.reward_points = ComputePoints();
         }
 
         public Rewards(string rewardName, int rewardAmt, int rewardQty, string rewardImg, string rewardType)
@@ -41,10 +41,10 @@ namespace WebApplication2.BLL
             this.reward_type = rewardType;
         }
 
-        public int ComputePoints()
-        {
-            TourPackageDAO
-        }
+        //public int ComputePoints()
+        //{
+         //   TourPackageDAO;
+        //}
 
         public List<Rewards> GetAllRewards()
         {

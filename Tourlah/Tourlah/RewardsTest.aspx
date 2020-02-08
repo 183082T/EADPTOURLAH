@@ -6,14 +6,22 @@
         <div class="row" style="text-align: center; display: inline-block;">
             <asp:Label runat="server" Text="Sort by: "></asp:Label>
             <asp:DropDownList ID="Filter" Style="color: #fff; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: black;" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlSort_SelectedIndexChanged">
+                <asp:ListItem Value="0">---Select---</asp:ListItem>
                 <asp:ListItem Value="1">Cash</asp:ListItem>
                 <asp:ListItem Value="2">Voucher</asp:ListItem>
                 <asp:ListItem Value="3">Gift</asp:ListItem>
             </asp:DropDownList>
         </div>
+        <div class="row" style="text-align: center; margin-left: 30px; display: inline-block;">
+                <asp:Label runat="server" Text="Order: "></asp:Label>
+                <asp:DropDownList ID="Order" OnSelectedIndexChanged="DdlOrder_SelectedIndexChanged" Style="color: #fff; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: black;" runat="server" AutoPostBack="True">
+                    <asp:ListItem Value="1">Ascending</asp:ListItem>
+                    <asp:ListItem Value="2">Decending</asp:ListItem>
+                </asp:DropDownList>
+            </div>
 
         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" CssClass="text-center" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid"
-            BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both" Height="573px" RepeatColumns="4" RepeatDirection="Horizontal" Width="957px"
+            BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both" Height="573px" RepeatColumns="5" RepeatDirection="Horizontal" Width="957px"
             Style="color: #FF0066; background-color: #000099" >
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -31,12 +39,14 @@
                     </tr>
                     <tr>
                         <td class="w3-center" style="height: 20px">
+                            <label>Left:</label>
                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("reward_qty") %>'></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td class="w3-center"><strong>
-                            <img src="Images/ic-shuga.svg" /><asp:Label ID="Label4" runat="server" Text='<%# Eval("reward_amt") %>'></asp:Label>
+                            <img src="Images/ic-shuga.svg" />
+                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("reward_amt") %>'></asp:Label>
                         </strong></td>
                     </tr>
                     <tr>
