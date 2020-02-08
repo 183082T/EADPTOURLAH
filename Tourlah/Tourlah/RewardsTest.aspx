@@ -22,7 +22,7 @@
 
         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" CssClass="text-center" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid"
             BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" GridLines="Both" Height="573px" RepeatColumns="5" RepeatDirection="Horizontal" Width="957px"
-            Style="color: #FF0066; background-color: #000099" >
+            Style="color: #FF0066; background-color: #000099">
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
             <ItemStyle BackColor="White" />
