@@ -125,6 +125,7 @@
                             <ul class="dropdown-menu" aria-labelledby="tourpackageDropdown">
                                 <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
                                 <li><a runat="server" href="~/ViewPurchases">View Purchase Log</a></li>
+                                <li><a runat="server" href="~/Review">Submit a review</a></li>
                             </ul>
                         </li>
                         <li><a runat="server" href="~/Category">Shop</a></li>

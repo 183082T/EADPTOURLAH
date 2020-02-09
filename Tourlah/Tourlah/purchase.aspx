@@ -94,7 +94,7 @@
                         </tr>
                         <tr>
 
-                            <td class="auto-style1" style="width: 200px">Total Cost: </td>
+                            <td class="auto-style1" style="width: 200px">Total Cost(S$): </td>
 
                             <td>
                                 <asp:Label ID="LblTotalcost" Text="" runat="server"></asp:Label>

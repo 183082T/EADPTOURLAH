@@ -22,7 +22,9 @@ namespace WebApplication2
 
             else if (Session["UNAUTHOR"] != null)
             {
-                LblWelcome.Text = Session["UNAUTHOR"].ToString();
+                Unaut.Visible = true;
+                Lbl_Unaut.Text = Session["UNAUTHOR"].ToString();
+                Lbl_Unaut.ForeColor = Color.Red;
             }
 
             else

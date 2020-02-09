@@ -13,6 +13,24 @@ namespace WebApplication2 {
     public partial class productDetails {
         
         /// <summary>
+        /// Validation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Validation;
+        
+        /// <summary>
+        /// Lbl_Msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_Msg;
+        
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>

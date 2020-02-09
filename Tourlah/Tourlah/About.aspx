@@ -8,11 +8,19 @@
             <button type="button" class="close" data-dismiss="alert">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <span style="font-size:50px;" class="glyphicon glyphicon-ok"></span>
-                <asp:Label ID="Lbl_Msg" runat="server" style="font-size:50px; margin-left:10px;"></asp:Label>
-            
-            
+            <span style="font-size:18px;" class="glyphicon glyphicon-ok"></span>
+                <asp:Label ID="Lbl_Msg" runat="server" style="font-size:18px; margin-left:10px;"></asp:Label>
         </asp:Panel>
+
+        <asp:Panel ID="Unaut" Visible="false" runat="server" CssClass="alert alert-dismissable alert-danger" Height="64px">
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span style="font-size:18px;" class="glyphicon glyphicon-exclamation-sign"></span>
+                <asp:Label ID="Lbl_Unaut" runat="server" style="font-size:18px; margin-left:10px;"></asp:Label>
+        </asp:Panel>
+
+
         <asp:Label runat="server" ID="LblWelcome"></asp:Label>
     <h2 style="text-align:center">All About Us</h2>
 </div>

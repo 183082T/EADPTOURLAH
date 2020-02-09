@@ -12,7 +12,7 @@ namespace WebApplication2.DAL
 {
     public class CartDAO
     {
-        public List<BLL.Cart> SelectAll()
+        public List<CartDetails> SelectAll()
         {
             //Step 1 -  Define a connection to the database by getting
             //          the connection string from web.config
@@ -30,25 +30,27 @@ namespace WebApplication2.DAL
             da.Fill(ds);
 
             //Step 5 -  Read data from DataSet to List
-            List<BLL.Cart> cList = new List<BLL.Cart>();
+            List<CartDetails> cList = new List<CartDetails>();
             int rec_cnt = ds.Tables[0].Rows.Count;
             for (int i = 0; i < rec_cnt; i++)
             {
                 DataRow row = ds.Tables[0].Rows[i];  // Sql command returns only one record
-                //string idStr = row["Id"].ToString();
-                //int id = Convert.ToInt32(idStr);
+                string idStr = row["Id"].ToString();
+                int id = Convert.ToInt32(idStr);
+
                 string name = row["NAME"].ToString();
                 string image = row["IMAGE"].ToString();
 
                 string quantityStr = row["QUANTITY"].ToString();
                 int quantity = Convert.ToInt32(quantityStr);
 
-                string price = row["PRICE"].ToString();
-                //double price = Convert.ToDouble(priceStr);
+                string priceStr = row["PRICE"].ToString();
+                double price = Convert.ToDouble(priceStr);
+
+                string total = row["TOTAL"].ToString();
 
 
-
-                BLL.Cart obj = new BLL.Cart(name, image, quantity, price);
+                CartDetails obj = new CartDetails(id, name, price, quantity, image, total);
                 cList.Add(obj);
             }
 
@@ -60,8 +62,8 @@ namespace WebApplication2.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "INSERT INTO Cart (NAME, IMAGE, PRICE, QUANTITY)" +
-                             "VALUES (@paraName,@paraImage,@paraPrice,@paraQuantity)";
+            string sqlStmt = "INSERT INTO Cart (NAME, IMAGE, PRICE, QUANTITY,TOTAL)" +
+                             "VALUES (@paraName,@paraImage,@paraPrice,@paraQuantity,@paraTotal)";
 
             int result = 0;    // Execute NonQuery return an integer value
             SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
@@ -70,6 +72,7 @@ namespace WebApplication2.DAL
             sqlCmd.Parameters.AddWithValue("@paraImage", c.Image);
             sqlCmd.Parameters.AddWithValue("@paraPrice", c.Price);
             sqlCmd.Parameters.AddWithValue("@paraQuantity", c.Quantity);
+            sqlCmd.Parameters.AddWithValue("@paraTotal", c.Total);
 
 
             myConn.Open();
@@ -80,7 +83,7 @@ namespace WebApplication2.DAL
             return result;
         }
 
-        public int Delete(BLL.Cart c)
+        public int Delete(CartDetails cd)
         {
             int result = 0;
             SqlCommand sqlCmd = new SqlCommand();
@@ -95,10 +98,40 @@ namespace WebApplication2.DAL
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
             // Step 3 : Add each parameterised variable with value
-            sqlCmd.Parameters.AddWithValue("@paraID", c.Id);
+            sqlCmd.Parameters.AddWithValue("@paraID", cd.Id);
             //sqlCmd.Parameters.AddWithValue("@paraName", up.Name);
             //sqlCmd.Parameters.AddWithValue("@paraDesc", up.Desc);
             //sqlCmd.Parameters.AddWithValue("@paraPrice", up.Price);
+
+            // Step 4 Open connection the execute NonQuery of sql command   
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+
+            // Step 5 :Close connection
+            myConn.Close();
+
+            return result;
+        }
+
+        public int Update(CartDetails cd)
+        {
+            int result = 0;
+            SqlCommand sqlCmd = new SqlCommand();
+
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            // Step 2 - Instantiate SqlCommand instance to add record 
+            //          with INSERT statement
+            string sqlStmt = "UPDATE Cart SET QUANTITY = @paraQuantity, TOTAL = @paraTotal where Id = @paraId ";
+
+            sqlCmd = new SqlCommand(sqlStmt, myConn);
+
+            // Step 3 : Add each parameterised variable with value
+            sqlCmd.Parameters.AddWithValue("@paraQuantity", cd.Quantity);
+            sqlCmd.Parameters.AddWithValue("@paraId", cd.Id);
+            sqlCmd.Parameters.AddWithValue("@paraTotal", cd.Total);
+
 
             // Step 4 Open connection the execute NonQuery of sql command   
             myConn.Open();

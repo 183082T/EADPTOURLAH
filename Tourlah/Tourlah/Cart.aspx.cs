@@ -11,16 +11,40 @@ namespace WebApplication2
 {
     public partial class Cart : System.Web.UI.Page
     {
-        List<BLL.Cart> cList;
+        List<BLL.CartDetails> cList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RefreshGridView();
+            if (Session["userName"] != null)
+            {
+                RefreshGridView();
+                Validation.Visible = false;
+                Purchase pr = new Purchase();
+
+                if (pr != null)
+                {
+                    List<Purchase> list = pr.SelectByUsername(Session["userName"].ToString());
+                    GvPurchase.DataSource = list;
+                    GvPurchase.DataBind();
+                }
+                else
+                {
+                    TPP.Visible = false;
+                    Validation.Visible = true;
+                    Lbl_Msg.Text = "You have not made any Purchases";
+                }
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+
+            }
+
         }
 
         private void RefreshGridView()
         {
-            BLL.Cart c = new BLL.Cart();
+            CartDetails c = new CartDetails();
             cList = c.GetAllCartP();
 
             GvCart.Visible = true;
@@ -28,21 +52,47 @@ namespace WebApplication2
             GvCart.DataBind();
         }
 
-        protected void GvCart_RowDeleting(object sender, GridViewDeleteEventArgs e)
+
+
+        protected void GvCart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BLL.Cart c = new BLL.Cart();
-            //c = new BLL.Cart(1, LblName.Text, "", 1, LblPrice.Text);
-            int result = c.DeleteItem();
-            if (result == 1)
+
+            GridViewRow row = GvCart.SelectedRow;
+            Session["pId"] = row.Cells[0].Text;
+            Session["pName"] = row.Cells[1].Text;
+            Session["pQuantity"] = row.Cells[3].Text;
+            Session["pPrice"] = row.Cells[4].Text;
+            Session["pTotal"] = row.Cells[5].Text;
+            Response.Redirect("CartUpdateForm.aspx");
+
+        }
+
+        private void calculateSum()
+        {
+            double grandtotal = 0;
+            foreach (GridViewRow row in GvCart.Rows)
             {
-                LblMsg.Text = "Item deleted successfully!";
-                LblMsg.ForeColor = Color.Green;
+                grandtotal = grandtotal + Convert.ToDouble(row.Cells[5].Text);
+
             }
-            else
+
+
+            double tour = 0;
+            foreach (GridViewRow row in GvPurchase.Rows)
             {
-                LblMsg.Text = "Error in deleting Item! Inform System Administrator!";
-                LblMsg.ForeColor = Color.Red;
+                tour = tour + Convert.ToDouble(row.Cells[6].Text);
+
             }
+
+            var total = grandtotal + tour; //total amt
+
+            Lbl_GrandTotal.Text = "Grand Total:  $" + total;
+            Users use = new Users();
+            int res = use.updateGT(Session["userName"].ToString(), total.ToString());
+        }
+        protected void GvCart_DataBound(object sender, EventArgs e)
+        {
+            calculateSum();
         }
     }
 }

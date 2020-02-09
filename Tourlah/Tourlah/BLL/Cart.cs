@@ -8,25 +8,28 @@ namespace WebApplication2.BLL
 {
     public class Cart
     {
+        //private List<CartItem> Items { get; set; }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public int Quantity { get; set; }
         public string Price { get; set; }
+        public double Total { get; set; }
 
         public Cart()
         {
 
         }
 
-        public Cart(string name, string image, int quantity, string price)
+        public Cart(string name, string image, int quantity, string price, double total)
         {
 
             Name = name;
             Image = image;
             Price = price;
             Quantity = quantity;
-
+            Total = total;
         }
 
         public int AddCart()
@@ -36,17 +39,9 @@ namespace WebApplication2.BLL
             return result;
         }
 
-        public List<Cart> GetAllCartP()
-        {
-            CartDAO dao = new CartDAO();
-            return dao.SelectAll();
-        }
 
-        public int DeleteItem()
-        {
-            CartDAO dao = new CartDAO();
-            int result = dao.Delete(this);
-            return result;
-        }
+
+
+
     }
 }

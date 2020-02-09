@@ -92,7 +92,7 @@ namespace WebApplication2
                 {
                     if (DdlPeople.SelectedIndex == i)
                     {
-                        LblTotalcost.Text = (costperperson * i).ToString("c");
+                        LblTotalcost.Text = (costperperson * i).ToString();
                     }
 
                     else

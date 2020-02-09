@@ -14,8 +14,8 @@ namespace WebApplication2
 
             if (!IsPostBack)
             {
-                //dlMenu.DataSource = DAL.DataAccess.selectQuery("SELECT * FROM Categories");
-                //dlMenu.DataBind();
+                dlMenu.DataSource = DAL.DataAccess.selectQuery("SELECT * FROM Categories");
+                dlMenu.DataBind();
             }
         }
     }
