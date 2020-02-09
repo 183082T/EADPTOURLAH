@@ -18,23 +18,34 @@ namespace WebApplication2
         {
             if (Session["userName"] != null)
             {
-                Lbl_Name.Text = Session["userName"].ToString();
 
+                Purchase pr = new Purchase();
+                List<Purchase> list = pr.SelectByUsername(Session["userName"].ToString());
+                if (list.Count != 0)
+                {
+                    Lbl_Name.Text = Session["userName"].ToString();
 
-                string connStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-                SqlConnection myConn = new SqlConnection(connStr);
+                    string connStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                    SqlConnection myConn = new SqlConnection(connStr);
 
-                string sqlstmt = "SELECT tourpackageName From PurchaseLog where userId ='" + Session["userName"].ToString() + "' ";
+                    string sqlstmt = "SELECT tourpackageName From PurchaseLog where userId ='" + Session["userName"].ToString() + "' ";
 
-                SqlDataAdapter adpt = new SqlDataAdapter(sqlstmt, myConn);
-                DataTable dt = new DataTable();
-                adpt.Fill(dt);
-                Ddl_Tp.DataSource = dt;
-                Ddl_Tp.DataBind();
-                Ddl_Tp.DataTextField = "tourpackageName";
-                Ddl_Tp.DataBind();
+                    SqlDataAdapter adpt = new SqlDataAdapter(sqlstmt, myConn);
+                    DataTable dt = new DataTable();
+                    adpt.Fill(dt);
+                    Ddl_Tp.DataSource = dt;
+                    Ddl_Tp.DataBind();
+                    Ddl_Tp.DataTextField = "tourpackageName";
+                    Ddl_Tp.DataBind();
 
-                BindRatings();
+                    BindRatings();
+                }
+
+                else
+                {
+                    Response.Redirect("tourpackage.aspx"); //need to make purchases before making review
+                }
+                
 
             }
             else

@@ -50,7 +50,7 @@
 
             <div class="row" style="text-align: center; display: inline-block;">
                 <asp:Label runat="server" Text="Sort by: "></asp:Label>
-                <asp:DropDownList OnSelectedIndexChanged="DdlSort_SelectedIndexChanged" Style="color: #fff; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: black;" runat="server" AutoPostBack="True" ID="DdlSort">
+                <asp:DropDownList CssClass="w3-hover-border-purple w3-orange" Style="font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: white;" runat="server" ID="DdlSort">
                     <asp:ListItem Value="1">Recent</asp:ListItem>
                     <asp:ListItem Value="2">Price</asp:ListItem>
                     <asp:ListItem Value="3">Most Discounted</asp:ListItem>
@@ -62,13 +62,18 @@
             </div>
             <div class="row" style="text-align: center; margin-left: 30px; display: inline-block;">
                 <asp:Label runat="server" Text="Order: "></asp:Label>
-                <asp:DropDownList OnSelectedIndexChanged="DdlOrder_SelectedIndexChanged" Style="color: #fff; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: black;" runat="server" AutoPostBack="True" ID="DdlOrder">
+                <asp:DropDownList  CssClass="w3-hover-border-purple w3-orange"  Style="font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: white;" runat="server"  ID="DdlOrder">
                     <asp:ListItem Value="1">Ascending</asp:ListItem>
                     <asp:ListItem Value="2">Decending</asp:ListItem>
                 </asp:DropDownList>
             </div>
-            <div id="thumbb">
 
+            <div class="row" style="text-align: center; margin-left: 30px; display: inline-block;" >
+
+                <asp:Button runat="server" Text="Sort" ID="Btn_Sort" OnClick="Btn_Sort_Click" Font-Size="Medium" style=" border-radius:5px; padding:1px 10px; margin-left:30px;" CssClass=" w3-hover-border-green w3-border-cyan"></asp:Button>
+            </div>
+
+            <div id="thumbb">
 
                 <asp:DataList ID="DlPackages" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
