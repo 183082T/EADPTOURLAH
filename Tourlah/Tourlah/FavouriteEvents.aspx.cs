@@ -34,7 +34,7 @@ namespace WebApplication2
         }
         private void RefreshGridView()
         {
-            if (Session["userName"].ToString() != null) { 
+            if (Session["userName"]!= null) { 
             SavedEvents seve = new SavedEvents();
             fList = seve.AllFavourites(Session["userName"].ToString());
 

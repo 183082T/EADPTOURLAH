@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication2.SiteMaster" %>
+
+<%@ Register src="LeftMenuControl.ascx" tagname="LeftMenuControl" tagprefix="uc1" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - TourLah!</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/mobirise-icons.css" rel="stylesheet" />
+    <link href="Content/tether.min.css" rel="stylesheet" />
+    <link href="Content/mbr-additional.css" rel="stylesheet" />
+    <link href="Content/aos.css" rel="stylesheet" />
+    <script src="Scripts/aos.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.min.js">
+        $(document).ready(function() {
+    var activeSystemClass = $('.list-group-item.active');
+
+    //something is entered in search form
+    $('#system-search').keyup( function() {
+       var that = this;
+        // affect all table rows on in systems table
+        var tableBody = $('.table-list-search tbody');
+        var tableRowsClass = $('.table-list-search tbody tr');
+        $('.search-sf').remove();
+        tableRowsClass.each( function(i, val) {
+        
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
+            if(inputText != '')
+            {
+                $('.search-query-sf').remove();
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                    + $(that).val()
+                    + '"</strong></td></tr>');
+            }
+            else
+            {
+                $('.search-query-sf').remove();
+            }
+
+            if( rowText.indexOf( inputText ) == -1 )
+            {
+                //hide rows
+                tableRowsClass.eq(i).hide();
+                
+            }
+            else
+            {
+                $('.search-sf').remove();
+                tableRowsClass.eq(i).show();
+            }
+        });
+        //all tr elements are hidden
+        if(tableRowsClass.children(':visible').length == 0)
+        {
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+        }
+    });
+});
+    </script>
+    <link href="css/master.css" rel="stylesheet" /> 
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-fixed-top navbar--color--ghost navbar--size--xl" data-startcolor="navbar--color--ghost" data-startsize="navbar--size--xl" data-intocolor="navbar--color--secondary" data-intosize="navbar--size--md">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="navTrigger">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">TourLah</a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="eventDropdown" data-toggle="dropdown">Tour<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="tourpackageDropdown">
+                               <li><a runat="server" href="~/Eventmain">Events</a></li>
+                                <li><a runat="server" href="~/FavouriteEvents">Favourtite</a></li>
+                            </ul>
+                        </li>                        
+                        <li><a runat="server" href="~/FoodMain">Food</a></li>
+                            <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="tourpackageDropdown" data-toggle="dropdown">Tour<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="tourpackageDropdown">
+                                <li><a runat="server" href="~/tourpackage">Tour Packages & Itineraries</a></li>
+                                <li><a runat="server" href="~/ViewPurchases">View Purchase Log</a></li>
+                            </ul>
+                        </li>
+                        <li><a runat="server" href="~/Category">Shop</a></li>
+                        <li><a runat="server" href="~/Cart">Cart</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="rewardsDropdown" data-toggle="dropdown">Rewards<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="rewardsDropdown">
+                                <li><a class="dropdown-item" runat="server" href="~/Works">How It Works</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/RewardsTest">Rewards</a></li>
+                            </ul>
+                        </li>
+                        <li><a runat="server" href="~/TEssential">Traveller Essentials</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a><asp:Button runat="server" style="background-color:transparent;color:white; border:none;" Text="Login/Sign Up" ID="Login" OnClick="Login_Click"></asp:Button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="home">
+            <div class="hero-text" style="text-align: center; padding-top:300px; ">
+                <%--<h1>Welcome to Tour Lah</h1>--%>
+            </div>
+        </section>
+
+        <div class="container body-content"></div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        
+
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+
+
+        $('.navTrigger').click(function () {
+            $(this).toggleClass('active');
+            console.log("Clicked menu");
+            $("#mainListDiv").toggleClass("show_list");
+            $("#mainListDiv").fadeIn();
+
+        });
+
+        // grabbing the class names from the data attributes
+        const navBar = $(".navbar"),
+            data = navBar.data();
+
+        // booleans used to tame the scroll event listening a little..
+        let scrolling = false,
+            scrolledPast = false;
+
+        // transition Into
+        function switchInto() {
+            // update `scrolledPast` bool
+            scrolledPast = true;
+            // add/remove CSS classes
+            navBar.removeClass(data.startcolor);
+            navBar.removeClass(data.startsize);
+            navBar.addClass(data.intocolor);
+            navBar.addClass(data.intocolor);
+            console.log("into transition triggered!");
+        }
+
+        // transition Start
+        function switchStart() {
+            // update `scrolledPast` bool
+            scrolledPast = false;
+            // add/remove CSS classes
+            navBar.addClass(data.startcolor);
+            navBar.addClass(data.startsize);
+            navBar.removeClass(data.intocolor);
+            navBar.removeClass(data.intosize);
+            console.log("start transition triggered!");
+        }
+
+        // set `scrolling` to true when user scrolls
+        $(window).scroll(() => scrolling = true);
+
+        setInterval(() => {
+            // when `scrolling` becomes true...
+            if (scrolling) {
+                // set it back to false
+                scrolling = false;
+                // check scroll position
+                if ($(window).scrollTop() > 180) {
+                    // user has scrolled > 100px from top since last check
+                    if (!scrolledPast) {
+                        switchInto();
+                    }
+                } else {
+                    // user has scrolled back <= 100px from top since last check
+                    if (scrolledPast) {
+                        switchStart();
+                    }
+                }
+            }
+
+        }, 100);
+
+    </script>
+</body>
+</html>
