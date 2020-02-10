@@ -165,5 +165,22 @@ namespace WebApplication2.DAL
 
             return result;
         }
+        public static int UpdateAverageRating(string tourname, string rating)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(connStr);
+
+            string sqlStmt = @"UPDATE TourPackages SET tourRating = @paraAverage where tourName = @paraname";
+
+            int result = 0;    // Execute NonQuery return an integer value
+            SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
+            sqlCmd.Parameters.AddWithValue("@paraname", tourname);
+            sqlCmd.Parameters.AddWithValue("@paraAverage", rating);
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+            myConn.Close();
+
+            return result;
+        }
     }
 }

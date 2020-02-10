@@ -59,7 +59,61 @@ namespace WebApplication2
                 LblDateto.Text = test.AddDays(intdays).ToString("dd/MM/yyyy");
             }
         }
-        protected void BtnCalculate_Click(object sender, EventArgs e)
+      
+
+        //protected void DdlPeople_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int costperperson = Convert.ToInt16(Session["costperperson"].ToString());
+        //        for (int i = 1; i < 12; i++)
+        //        {
+        //            if (DdlPeople.SelectedIndex == i)
+        //            {
+        //                LblTotalcost.Text = (costperperson * i).ToString();
+        //            }
+
+        //            else
+        //            {
+        //                Lbl_Msg.Text = "dUNNO";
+        //            }
+        //        }
+        //    }
+        //    catch
+        //    {
+
+        //    }
+
+        //}
+
+        //protected void DdlTraveltype_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    int costperperson;
+
+        //    DdlPeople.SelectedIndex = 0;
+        //    LblTotalcost.Text = "";
+
+        //    if (DdlTraveltype.SelectedIndex == 1)
+        //    {
+        //        costperperson = 1200;
+        //        Session["costperperson"] = costperperson.ToString();
+        //    }
+
+        //    else if (DdlTraveltype.SelectedIndex == 2)
+        //    {
+        //        costperperson = 1500;
+        //        Session["costperperson"] = costperperson.ToString();
+        //    }
+        //    else
+        //    {
+        //        Validation.Visible = true;
+        //        Lbl_Msg.Text = "Please select your travel type";
+        //    }
+
+
+        //}
+
+        protected void BtnSubmit_Click(object sender, EventArgs e)
         {
             DateTime datefrom = Convert.ToDateTime(TbDatefrom.Text);
             string datefromstring = datefrom.ToString("dd/MM/yyyy");
@@ -76,44 +130,14 @@ namespace WebApplication2
             {
                 int update = rd.updatecounter(id, rd.PurchaseCount);
                 Validation.Visible = true;
-                Lbl_Msg.Text = "Successfully Purchased Tour Package";
+                Validation.CssClass = "alert alert-dismissable alert-success";
+                Lbl_Msg.Text = "Successfully added to cart, Proceed to your cart to finalize your purchases";
             }
-
-
-
         }
 
-        protected void DdlPeople_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int costperperson = Convert.ToInt16(Session["costperperson"].ToString());
-                for (int i = 1; i < 12; i++)
-                {
-                    if (DdlPeople.SelectedIndex == i)
-                    {
-                        LblTotalcost.Text = (costperperson * i).ToString("c");
-                    }
-
-                    else
-                    {
-                        Lbl_Msg.Text = "dUNNO";
-                    }
-                }
-            }
-            catch
-            {
-
-            }
-
-        }
-
-        protected void DdlTraveltype_SelectedIndexChanged(object sender, EventArgs e)
+        protected void BtnCalculate_Click(object sender, EventArgs e)
         {
             int costperperson;
-
-            DdlPeople.SelectedIndex = 0;
-            LblTotalcost.Text = "";
 
             if (DdlTraveltype.SelectedIndex == 1)
             {
@@ -131,8 +155,36 @@ namespace WebApplication2
                 Validation.Visible = true;
                 Lbl_Msg.Text = "Please select your travel type";
             }
+            try
+            {
+                int cpp = Convert.ToInt16(Session["costperperson"].ToString());
+                for (int i = 1; i < 12; i++)
+                {
+                    if (DdlPeople.SelectedIndex == i)
+                    {
+                        LblTotalcost.Text = (cpp * i).ToString();
 
+                        if (LblDateto.Text != "" && LblTotalcost.Text != "")
+                            BtnSubmit.Visible = true;
+                        else
+                        {
+                            Validation.Visible = true;
+                            Lbl_Msg.Text = "Please select your preferred date";
+                        }
+                            
+                    }
 
+                    else if (DdlPeople.SelectedIndex == 0)
+                    {
+                        Validation.Visible = true;
+                        Lbl_Msg.Text = "Please indicate the number of travellers";
+                    }
+                }
+            } catch
+            {
+                
+            }
+            
         }
     }
 }

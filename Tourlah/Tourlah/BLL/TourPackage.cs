@@ -17,12 +17,13 @@ namespace WebApplication2.BLL
         public string OriginalPrice { get; set; }
         public string DiscountPrice { get; set; }
         public string PurchaseCount { get; set; }
+        public string TourRating { get; set; }
 
         public TourPackage()
         {
 
         }
-        public TourPackage(string tourid, string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice, string purchasecount)
+        public TourPackage(string tourid, string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice, string purchasecount, string tourrating)
         {
             TourPackageId = tourid;
             TourPackageName = tourname;
@@ -33,6 +34,7 @@ namespace WebApplication2.BLL
             OriginalPrice = touroriginalprice;
             DiscountPrice = tourdiscountprice;
             PurchaseCount = purchasecount;
+            TourRating = tourrating;
         }
 
         public int CreateTourPackage(string tourname, string image, string tourdescription, string tourduration, string tourlocation, string touroriginalprice, string tourdiscountprice)
@@ -62,6 +64,11 @@ namespace WebApplication2.BLL
         public int updatecounter(string userid, string purchasecounter)
         {
             return TourPackageDAO.UpdateCounter(userid, purchasecounter);
+        }
+
+        public int AverageRating(string tourname, string tourrating)
+        {
+            return TourPackageDAO.UpdateAverageRating(tourname, tourrating);
         }
     }
 }

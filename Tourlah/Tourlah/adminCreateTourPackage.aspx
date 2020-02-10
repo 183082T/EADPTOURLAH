@@ -20,7 +20,8 @@
             <button type="button" class="close" data-dismiss="alert">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <asp:Label ID="Lbl_Msg" runat="server"></asp:Label>
+             <span style="font-size:18px;" class="glyphicon glyphicon-exclamation-sign"></span>
+                <asp:Label ID="Lbl_Msg"  style="margin-left:10px; font-size:18px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" runat="server"></asp:Label>
         </asp:Panel>
 
 
@@ -36,7 +37,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="height: 40px; width: 200px;">Image</td>
+                        <td style="height: 40px; width: 200px;">Image URL:</td>
                         <td style="height: 40px;">
                             <asp:TextBox runat="server" required="required" ID="adminImageLink" Width="120%"></asp:TextBox>
                             <asp:Button ID="btnUpload" Text="Upload" runat="server" OnClick="UploadFile" formnovalidate />

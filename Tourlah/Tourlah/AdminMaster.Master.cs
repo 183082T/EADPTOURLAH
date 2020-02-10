@@ -11,7 +11,11 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["adminName"] == null)
+            {
+                Session["UNAUTHOR"] = "Unauthorized Access!";
+                Response.Redirect("About.aspx");
+            }
         }
     }
 }
