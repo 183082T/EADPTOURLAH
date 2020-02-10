@@ -25,7 +25,7 @@
         <button type="button" class="close" data-dismiss="alert">
             <span aria-hidden="true">&times;</span>
         </button>
-        <asp:Label ID="Lbl_Msg" runat="server"></asp:Label>
+        <asp:Label ID="Lbl_Msg" runat="server" style="margin-left:10px; font-size:18px;"></asp:Label>
     <br />
     <asp:Button runat="server" Visible="false" CssClass="btn-success" style="border-radius:10px; margin-left: 0;" Text="Click here to view Tour Packages" ID="GotoTourpackage" OnClick="GotoTourpackage_Click" Width="250px"></asp:Button>
     </asp:Panel>

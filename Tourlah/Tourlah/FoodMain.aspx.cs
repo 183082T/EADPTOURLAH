@@ -17,20 +17,19 @@ namespace WebApplication2
        
         }
 
-        protected void ButtonInfo_Click(object sender, EventArgs e)
+        protected void ButtonSearch_Click(object sender, EventArgs e)
         {
-            HtmlButton btn = (HtmlButton)sender;
-            Session["ID"] = btn.Attributes["FoodID"];
+            Session["FoodName"] = TBSearch.Text;
 
             Response.Redirect("FoodInfo.aspx");
         }
 
-        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        protected void ButtonMoreInfo(object source, DataListCommandEventArgs e)
         {
-            if (e.CommandName == "viewdetails")
-            {
-                Response.Redirect("FoodInfo.aspx?id=" + e.CommandArgument.ToString());
-            }
+            DataList1.SelectedIndex = e.Item.ItemIndex;
+            Session["FoodName"] = ((Label)DataList1.SelectedItem.FindControl("LabelName")).Text;
+
+            Response.Redirect("FoodInfo.aspx");
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿
+#tourhead {
+    margin-top:100px;
+    
+}
+#thumbb {
+    display:inline-block;
+ 
+    margin-top:50px;
+}
+
+.description {
+    font-family: 'Baskervville', serif;
+    font-size:16px;
+}

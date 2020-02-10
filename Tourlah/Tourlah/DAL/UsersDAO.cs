@@ -10,7 +10,7 @@ namespace WebApplication2.DAL
 {
     public class UsersDAO
     {
-        public int CreateUser(Users use)
+        public int CreateUser(string name, string password)
         {
 
             int result = 0;
@@ -26,9 +26,9 @@ namespace WebApplication2.DAL
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
 
-            sqlCmd.Parameters.AddWithValue("@pararegisterUsername", use.Username);
-            sqlCmd.Parameters.AddWithValue("@pararegisterPassword", use.Password);
-            sqlCmd.Parameters.AddWithValue("@pararegisterPoints", use.Points);
+            sqlCmd.Parameters.AddWithValue("@pararegisterUsername", name);
+            sqlCmd.Parameters.AddWithValue("@pararegisterPassword", password);
+            
 
 
 
@@ -44,13 +44,13 @@ namespace WebApplication2.DAL
         {
             string name = rd["name"].ToString();
             string password = rd["password"].ToString();
-            string points = rd["points"].ToString();
+            
 
             Users use = new Users
             {
                 Username = name,
                 Password = password,
-                Points = points
+                
             };
             return use;
 
@@ -82,6 +82,23 @@ namespace WebApplication2.DAL
 
         }
 
+        public static int updateGT(string name, string gt)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(connStr);
+
+            string sqlStmt = @"UPDATE Users SET grandTotal = @paragt where name = @paraname";
+
+            int result = 0;    // Execute NonQuery return an integer value
+            SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
+            sqlCmd.Parameters.AddWithValue("@paraname", name);
+            sqlCmd.Parameters.AddWithValue("@paragt", gt);
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+            myConn.Close();
+
+            return result;
+        }
 
     }
 }

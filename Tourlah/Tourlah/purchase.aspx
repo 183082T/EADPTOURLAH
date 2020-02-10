@@ -66,7 +66,7 @@
                         <tr>
                             <td class="auto-style1" style="width: 200px">Travel Type:</td>
                             <td>
-                                <asp:DropDownList ID="DdlTraveltype" OnSelectedIndexChanged="DdlTraveltype_SelectedIndexChanged" Style="color: black; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: #00ffff;" runat="server" AutoPostBack="true" >
+                                <asp:DropDownList ID="DdlTraveltype"  Style="color: black; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: #00ffff;" runat="server" >
                                     <asp:ListItem Enabled="True" Selected="True" Value="-1">--Select--</asp:ListItem>
                                     <asp:ListItem Value="Standard">Standard</asp:ListItem>
                                     <asp:ListItem Value="Premium">Premium</asp:ListItem>
@@ -77,7 +77,7 @@
                         <tr>
                             <td class="auto-style1" style="width: 200px">Number of People: </td>
                             <td>
-                                <asp:DropDownList ID="DdlPeople" OnSelectedIndexChanged="DdlPeople_SelectedIndexChanged" Style="color: black; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: #00ffff;" runat="server" AutoPostBack="true" >
+                                <asp:DropDownList ID="DdlPeople"  Style="color: black; font-size: 14px; padding: 5px 10px; border-radius: 5px; background-color: #00ffff;" runat="server"  >
                                     <asp:ListItem Selected="True" Value="-1">--Select--</asp:ListItem>
                                     <asp:ListItem>1</asp:ListItem>
                                     <asp:ListItem>2</asp:ListItem>
@@ -94,19 +94,29 @@
                         </tr>
                         <tr>
 
-                            <td class="auto-style1" style="width: 200px">Total Cost: </td>
+                            <td class="auto-style1" style="width: 200px">Total Cost(S$): </td>
 
                             <td>
-                                <asp:Label ID="LblTotalcost" Text="" runat="server"></asp:Label>
+                                <asp:Label ID="LblTotalcost"  runat="server"></asp:Label>
                             </td>
                         </tr>
                         <br />
+
                         <tr>
 
                             <td class="auto-style1" style="width: 200px"></td>
 
                             <td>
-                                <asp:Button runat="server" Text="Proceed to checkout" CssClass="btn btn-success" ID="BtnCalculate" OnClick="BtnCalculate_Click" ></asp:Button>
+                                <asp:Button runat="server" Text="Calculate Total Cost" CssClass="btn btn-success" ID="BtnCalculate" OnClick="BtnCalculate_Click" ></asp:Button>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td class="auto-style1" style="width: 200px"></td>
+
+                            <td>
+                                <asp:Button runat="server" Visible="false" Text="Add to Cart" CssClass="btn btn-success" ID="BtnSubmit" OnClick="BtnSubmit_Click" ></asp:Button>
                             </td>
                         </tr>
                     </table>

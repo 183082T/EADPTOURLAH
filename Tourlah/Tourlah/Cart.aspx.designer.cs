@@ -13,6 +13,42 @@ namespace WebApplication2 {
     public partial class Cart {
         
         /// <summary>
+        /// Validation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Validation;
+        
+        /// <summary>
+        /// Lbl_Msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_Msg;
+        
+        /// <summary>
+        /// TPP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TPP;
+        
+        /// <summary>
+        /// GvPurchase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GvPurchase;
+        
+        /// <summary>
         /// GvCart control.
         /// </summary>
         /// <remarks>
@@ -22,12 +58,12 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.GridView GvCart;
         
         /// <summary>
-        /// LblMsg control.
+        /// Lbl_GrandTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMsg;
+        protected global::System.Web.UI.WebControls.Label Lbl_GrandTotal;
     }
 }

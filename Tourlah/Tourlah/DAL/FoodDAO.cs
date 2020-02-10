@@ -61,7 +61,8 @@ namespace WebApplication2.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "INSERT INTO TDFood (foodName, foodInfo, foodPic, placeName, placeInfo, placeAdd, placeName2, placeInfo2, placeAdd2, placeName3, placeinfo3, placeAdd3)" +
+            string sqlStmt = "INSERT INTO TDFood " +
+                "(foodName, foodInfo, foodPic, placeName, placeInfo, placeAdd, placeName2, placeInfo2, placeAdd2, placeName3, placeinfo3, placeAdd3)" +
                 "VALUES (@paraFoodName, @paraFoodInfo, @paraFoodPic, @paraPlaceName, @paraPlaceInfo, @paraPlaceAdd, @paraPlaceName2, @paraPlaceInfo2, @paraPlaceAdd2, @paraPlaceName3, @paraPlaceInfo3, @paraPlaceAdd3)";
 
             sqlCmd = new SqlCommand(sqlStmt, myConn);
@@ -125,6 +126,41 @@ namespace WebApplication2.DAL
             myConn.Close();
 
             return result;
+        }
+
+        public BLL.Food SelectById(string FoodName)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlstmt = "Select * from TDFood where FoodName = @paraFoodName";
+            SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
+            da.SelectCommand.Parameters.AddWithValue("@paraFoodName", FoodName);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+
+            BLL.Food obj = null;
+            if (rec_cnt > 0)
+            {
+                DataRow row = ds.Tables[0].Rows[0];
+                string FoodInfo = row["foodInfo"].ToString();
+                string FoodPic = row["foodPic"].ToString();
+                string PlaceName = row["placeName"].ToString();
+                string PlaceInfo = row["placeInfo"].ToString();
+                string PlaceAdd = row["placeAdd"].ToString();
+                string PlaceName2 = row["placeName2"].ToString();
+                string PlaceInfo2 = row["placeInfo2"].ToString();
+                string PlaceAdd2 = row["placeAdd2"].ToString();
+                string PlaceName3 = row["placeName3"].ToString();
+                string PlaceInfo3 = row["placeInfo3"].ToString();
+                string PlaceAdd3 = row["placeAdd3"].ToString();
+
+                obj = new Food(FoodName, FoodInfo, FoodPic, PlaceName, PlaceInfo, PlaceAdd, PlaceName2, PlaceInfo2, PlaceAdd2, PlaceName3, PlaceInfo3, PlaceAdd3);
+            }
+            return obj;
         }
     }
 }

@@ -62,5 +62,10 @@ namespace WebApplication2.BLL
             FoodDAO dao = new FoodDAO();
             return dao.SelectAll();
         }
+        public Food GetProductById(string FoodName)
+        {
+            FoodDAO dao = new FoodDAO();
+            return dao.SelectById(FoodName);
+        }
     }
 }

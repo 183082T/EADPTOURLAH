@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -121,11 +124,13 @@
       <DependentUpon>TourlahDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Cart.aspx" />
+    <Content Include="CartUpdateForm.aspx" />
     <Content Include="Category.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
+    <Content Include="Content\aos.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -136,6 +141,7 @@
     <Content Include="Content\mobirise-icons.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\review.css" />
     <Content Include="css\styleEventMain.css" />
     <Content Include="css\styleRewards1.css" />
     <Content Include="css\styleRewards2.css" />
@@ -152,6 +158,7 @@
     <Content Include="Eventpage.aspx" />
     <Content Include="EventUpdate.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FavouriteEvents.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FoodInfo.aspx" />
@@ -170,6 +177,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Images\blank_star.png" />
     <Content Include="Images\building.gif" />
     <Content Include="Images\cashback.svg" />
     <Content Include="Images\charkuaytiao.jpg" />
@@ -182,7 +190,10 @@
     <Content Include="Images\cs1.jpg" />
     <Content Include="Images\cs2.jpg" />
     <Content Include="Images\currency.jpg" />
+    <Content Include="Images\Events.jpg" />
     <Content Include="Images\filter.gif" />
+    <Content Include="Images\Food.jpg" />
+    <Content Include="Images\half_star.png" />
     <Content Include="Images\handicap.jpg" />
     <Content Include="Images\I1.jpg" />
     <Content Include="Images\I2.jpg" />
@@ -200,12 +211,16 @@
     <Content Include="Images\numbers.jpg" />
     <Content Include="Images\powerPlug.jpg" />
     <Content Include="Images\receipt.svg" />
+    <Content Include="Images\Rewards.png" />
     <Content Include="Images\rotiprata.jpg" />
     <Content Include="Images\scan.svg" />
+    <Content Include="Images\shining_star.png" />
+    <Content Include="Images\Shop.jpg" />
     <Content Include="Images\shop.svg" />
     <Content Include="Images\smoking.jpg" />
     <Content Include="Images\taxRefund.jpg" />
     <Content Include="Images\Tipping.jpg" />
+    <Content Include="Images\Tour.jpg" />
     <Content Include="Images\water.jpg" />
     <Content Include="Images\weather.jpg" />
     <Content Include="Images\wifi.jpg" />
@@ -216,6 +231,7 @@
     <Content Include="ProductViewForm.aspx" />
     <Content Include="purchase.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Review.aspx" />
     <Content Include="RewardsPage.aspx" />
     <Content Include="RewardsTest.aspx" />
     <Content Include="Scripts\counter.js" />
@@ -391,14 +407,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\Admin.cs" />
     <Compile Include="BLL\Cart.cs" />
+    <Compile Include="BLL\CartDetails.cs" />
     <Compile Include="BLL\Events.cs" />
     <Compile Include="BLL\Food.cs" />
     <Compile Include="BLL\Product.cs" />
     <Compile Include="BLL\productDetails.cs" />
     <Compile Include="BLL\Purchase.cs" />
     <Compile Include="BLL\Rewards.cs" />
+    <Compile Include="BLL\SavedEvents.cs" />
     <Compile Include="BLL\TourPackage.cs" />
     <Compile Include="BLL\updateProduct.cs" />
+    <Compile Include="BLL\UserRating.cs" />
     <Compile Include="BLL\Users.cs" />
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
@@ -406,6 +425,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartUpdateForm.aspx.cs">
+      <DependentUpon>CartUpdateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartUpdateForm.aspx.designer.cs">
+      <DependentUpon>CartUpdateForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
@@ -430,6 +456,7 @@
     </Compile>
     <Compile Include="DAL\AdminDAO.cs" />
     <Compile Include="DAL\CartDAO.cs" />
+    <Compile Include="DAL\SavedEventsDAO.cs" />
     <Compile Include="DAL\DataAccess.cs" />
     <Compile Include="DAL\EventsDAO.cs" />
     <Compile Include="DAL\FoodDAO.cs" />
@@ -439,6 +466,7 @@
     <Compile Include="DAL\RewardsDAO.cs" />
     <Compile Include="DAL\TourPackageDAO.cs" />
     <Compile Include="DAL\updateProductDAO.cs" />
+    <Compile Include="DAL\UserRatingDAO.cs" />
     <Compile Include="DAL\UsersDAO.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -467,6 +495,13 @@
     </Compile>
     <Compile Include="EventUpdate.aspx.designer.cs">
       <DependentUpon>EventUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FavouriteEvents.aspx.cs">
+      <DependentUpon>FavouriteEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FavouriteEvents.aspx.designer.cs">
+      <DependentUpon>FavouriteEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="FoodInfo.aspx.cs">
       <DependentUpon>FoodInfo.aspx</DependentUpon>
@@ -541,6 +576,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Review.aspx.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Review.aspx.designer.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
     </Compile>
     <Compile Include="RewardsPage.aspx.cs">
       <DependentUpon>RewardsPage.aspx</DependentUpon>
