@@ -3,3 +3,7 @@ Tourlah/.vs/Tourlah/v15/Server/sqlite3/storage.ide-wal
 *.ide
 
 *.mdf
+Tourlah/.vs/Tourlah/v15/Server/sqlite3/storage.ide-shm
+Tourlah/.vs/Tourlah/v15/Server/sqlite3/storage.ide-wal
+Tourlah/Tourlah/App_Data/TourlahDatabase_log.ldf
+Tourlah/Tourlah/App_Data/TourlahDatabase.mdf
