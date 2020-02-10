@@ -119,10 +119,10 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/About">About</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="eventDropdown" data-toggle="dropdown">Tour<span class="caret"></span></a>
+                            <a class="dropdown-toggle" href="#" id="eventDropdown" data-toggle="dropdown">Events<span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="tourpackageDropdown">
                                <li><a runat="server" href="~/Eventmain">Events</a></li>
-                                <li><a runat="server" href="~/FavouriteEvents">Favourtite</a></li>
+                                <li><a runat="server" href="~/FavouriteEvents">FavouriteEvents</a></li>
                             </ul>
                         </li>                        
                         <li><a runat="server" href="~/FoodMain">Food</a></li>
