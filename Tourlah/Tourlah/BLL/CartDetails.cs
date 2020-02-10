@@ -14,14 +14,15 @@ namespace WebApplication2.BLL
         public double Quantity { get; set; }
         public string Image { get; set; }
         public string Total { get; set; }
-
+        public string Username { get; set; }
         public CartDetails()
         {
 
         }
 
-        public CartDetails(int id, string name, double price, double quantity, string image, string total)
+        public CartDetails(string cusername, int id, string name, double price, double quantity, string image, string total)
         {
+            Username = cusername;
             Id = id;
             Name = name;
             Price = price;
@@ -41,10 +42,10 @@ namespace WebApplication2.BLL
             int result = dao.Delete(this);
             return result;
         }
-        public List<CartDetails> GetAllCartP()
+        public List<CartDetails> GetAllCartP(string username)
         {
             CartDAO dao = new CartDAO();
-            return dao.SelectAll();
+            return dao.SelectAll(username);
         }
     }
 }

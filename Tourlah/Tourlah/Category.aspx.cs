@@ -14,12 +14,12 @@ namespace WebApplication2
         {
             if (!IsPostBack)
             {
-                //string IDCAT = Request.QueryString["IDCAT"];
-                //if (IDCAT != null)
-                //{
-                //    dlCategory.DataSource = DataAccess.selectQuery("SELECT * FROM PRODUCTS WHERE IDCAT=" + IDCAT);
-                //    dlCategory.DataBind();
-                //}
+                string IDCAT = Request.QueryString["IDCAT"];
+                if (IDCAT != null)
+                {
+                    dlCategory.DataSource = DataAccess.selectQuery("SELECT * FROM PRODUCTS WHERE IDCAT=" + IDCAT);
+                    dlCategory.DataBind();
+                }
             }
         }
 

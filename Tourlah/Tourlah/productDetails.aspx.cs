@@ -39,8 +39,9 @@ namespace WebApplication2
                 quantity = 1;
                 Total = ComputeTotal(price, quantity);
 
+                string Username = Session["userName"].ToString();
                 BLL.Cart c = new BLL.Cart();
-                c = new BLL.Cart(LblName.Text, Image1.ImageUrl, 1, LblPrice.Text, Total);
+                c = new BLL.Cart(Username, LblName.Text, Image1.ImageUrl, 1, LblPrice.Text, Total);
                 int result = c.AddCart();
                 if (result == 1)
                 {
@@ -65,6 +66,11 @@ namespace WebApplication2
             double fmPrice = Convert.ToDouble(price);
             double fmTotal = fmPrice * quantity;
             return fmTotal;
+        }
+
+        protected void BtnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Category?IDCAT=1.aspx");
         }
     }
 }

@@ -8,23 +8,22 @@ namespace WebApplication2.BLL
 {
     public class Cart
     {
-        //private List<CartItem> Items { get; set; }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public int Quantity { get; set; }
         public string Price { get; set; }
         public double Total { get; set; }
+        public string Username { get; set; }
 
         public Cart()
         {
 
         }
 
-        public Cart(string name, string image, int quantity, string price, double total)
+        public Cart(string username, string name, string image, int quantity, string price, double total)
         {
-
+            Username = username;
             Name = name;
             Image = image;
             Price = price;
@@ -38,10 +37,5 @@ namespace WebApplication2.BLL
             int result = dao.Insert(this);
             return result;
         }
-
-
-
-
-
     }
 }

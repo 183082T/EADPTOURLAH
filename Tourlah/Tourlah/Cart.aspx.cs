@@ -17,14 +17,17 @@ namespace WebApplication2
         {
             if (Session["userName"] != null)
             {
+
                 RefreshGridView();
                 Validation.Visible = false;
                 Purchase pr = new Purchase();
+                calculateSum();
 
                 if (pr != null)
                 {
                     List<Purchase> list = pr.SelectByUsername(Session["userName"].ToString());
                     GvPurchase.DataSource = list;
+
                     GvPurchase.DataBind();
                 }
                 else
@@ -45,7 +48,7 @@ namespace WebApplication2
         private void RefreshGridView()
         {
             CartDetails c = new CartDetails();
-            cList = c.GetAllCartP();
+            cList = c.GetAllCartP(Session["userName"].ToString());
 
             GvCart.Visible = true;
             GvCart.DataSource = cList;
@@ -58,11 +61,11 @@ namespace WebApplication2
         {
 
             GridViewRow row = GvCart.SelectedRow;
-            Session["pId"] = row.Cells[0].Text;
-            Session["pName"] = row.Cells[1].Text;
-            Session["pQuantity"] = row.Cells[3].Text;
-            Session["pPrice"] = row.Cells[4].Text;
-            Session["pTotal"] = row.Cells[5].Text;
+            Session["pId"] = row.Cells[1].Text;
+            Session["pName"] = row.Cells[2].Text;
+            Session["pQuantity"] = row.Cells[4].Text;
+            Session["pPrice"] = row.Cells[5].Text;
+            Session["pTotal"] = row.Cells[6].Text;
             Response.Redirect("CartUpdateForm.aspx");
 
         }
@@ -72,7 +75,7 @@ namespace WebApplication2
             double grandtotal = 0;
             foreach (GridViewRow row in GvCart.Rows)
             {
-                grandtotal = grandtotal + Convert.ToDouble(row.Cells[5].Text);
+                grandtotal = grandtotal + Convert.ToDouble(row.Cells[6].Text);
 
             }
 
@@ -89,6 +92,7 @@ namespace WebApplication2
             Lbl_GrandTotal.Text = "Grand Total:  $" + total;
             Users use = new Users();
             int res = use.updateGT(Session["userName"].ToString(), total.ToString());
+            total = 0;
         }
         protected void GvCart_DataBound(object sender, EventArgs e)
         {

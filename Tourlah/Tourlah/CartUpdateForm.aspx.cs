@@ -38,7 +38,7 @@ namespace WebApplication2
 
                 double NewTotal;
                 NewTotal = ComputeNewTotal(price, quantity);
-                CartDetails cd = new CartDetails(id, LblName.Text, price, quantity, "", NewTotal.ToString());
+                CartDetails cd = new CartDetails("", id, LblName.Text, price, quantity, "", NewTotal.ToString());
 
                 int result = cd.UpdateCartQuantity();
                 if (result == 1)
@@ -51,6 +51,8 @@ namespace WebApplication2
                     LblMsg.Text = "Error in changing Quantity! Inform System Administrator!";
                     LblMsg.ForeColor = Color.Red;
                 }
+
+                Response.Redirect("Cart.aspx");
             }
         }
 
@@ -81,7 +83,7 @@ namespace WebApplication2
             int quantity = Convert.ToInt32(TbQuantity.Text);
             int id = Convert.ToInt32(LblId.Text);
             double price = Convert.ToDouble(LblPrice.Text);
-            BLL.CartDetails c = new CartDetails(id, LblName.Text, price, quantity, "", LblTotal.Text);
+            BLL.CartDetails c = new CartDetails("", id, LblName.Text, price, quantity, "","");
             int result = c.DeleteItem();
             if (result == 1)
             {
@@ -93,6 +95,8 @@ namespace WebApplication2
                 LblMsg.Text = "Error in deleting item! Inform System Administrator!";
                 LblMsg.ForeColor = Color.Red;
             }
+
+            Response.Redirect("Cart.aspx");
         }
 
         public double ComputeNewTotal(double price, int quantity)

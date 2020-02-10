@@ -44,43 +44,40 @@
                 <SortedDescendingCellStyle BackColor="#F1E5CE" />
                 <SortedDescendingHeaderStyle BackColor="#93451F" />
             </asp:GridView>
-
-        </div>
-
-
-
-        <br />
-        <asp:GridView ID="GvCart" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" Height="253px" Width="1147px" OnSelectedIndexChanged="GvCart_SelectedIndexChanged" CellPadding="4" ForeColor="Black" HorizontalAlign="Center" OnDataBound="GvCart_DataBound">
-            <AlternatingRowStyle BackColor="White" />
+            <br/>
+            <br />
+             <asp:GridView ID="GvCart" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" Height="253px" Width="1147px" OnSelectedIndexChanged="GvCart_SelectedIndexChanged" CellPadding="3" HorizontalAlign="Center" OnDataBound="GvCart_DataBound" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2">
             <Columns>
+                <asp:BoundField DataField="Username" HeaderText="Username" />
                 <asp:BoundField DataField="Id" HeaderText="Product Number" ReadOnly="True" />
                 <asp:BoundField DataField="NAME" HeaderText="Product Name" ReadOnly="True" />
-                <asp:ImageField DataImageUrlField="IMAGE" HeaderText="Product Image" ReadOnly="True" DataImageUrlFormatString="~\Images\{0}">
-                </asp:ImageField>
+                <asp:TemplateField HeaderText="Product Image">
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" Height="169px" ImageUrl='<%#Eval("IMAGE")%>' Width="100px" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="QUANTITY" HeaderText="Quantity" />
                 <asp:BoundField DataField="PRICE" HeaderText="Price" ReadOnly="True" />
                 <asp:BoundField DataField="TOTAL" HeaderText="Total" ReadOnly="True" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
-            <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" />
-            <FooterStyle Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#EFF3FB" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" HorizontalAlign="Center" />
-            <SortedAscendingCellStyle BackColor="#F5F7FB" />
-            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            <EditRowStyle HorizontalAlign="Center" />
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
+        </div>
+        <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   
         <asp:Label ID="Lbl_GrandTotal" runat="server" Text="Grand Total:" Font-Size="Large"></asp:Label>
         <br />
         <br />
-
-
-
     </div>
 </asp:Content>
