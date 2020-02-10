@@ -153,6 +153,7 @@
     <Content Include="Eventpage.aspx" />
     <Content Include="EventUpdate.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FavouriteEvents.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FoodInfo.aspx" />
@@ -476,6 +477,13 @@
     </Compile>
     <Compile Include="EventUpdate.aspx.designer.cs">
       <DependentUpon>EventUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FavouriteEvents.aspx.cs">
+      <DependentUpon>FavouriteEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FavouriteEvents.aspx.designer.cs">
+      <DependentUpon>FavouriteEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="FoodInfo.aspx.cs">
       <DependentUpon>FoodInfo.aspx</DependentUpon>

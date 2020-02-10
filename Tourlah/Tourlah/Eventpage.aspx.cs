@@ -27,8 +27,7 @@ namespace WebApplication2
         protected void Button1_Click(object sender, EventArgs e)
         {
             SavedEvents Seve = new SavedEvents();
-
-            Seve = new SavedEvents(Username, EventId);
+            Seve = new SavedEvents(Username, EventId,Eventlbl.Text,DescriptionLbl.Text,Convert.ToDateTime(EventDatelbl.Text),EventLocationlbl.Text,Maintypelbl.Text,Secondtypelbl.Text);
             int result = Seve.FavouriteEvent();
         }
     }
