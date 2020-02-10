@@ -33,8 +33,8 @@ namespace WebApplication2
             else
             {
 
-                use = new Users(registerUsername.Text, registerPassword.Text);
-                int result = use.Create();
+                use = new Users();
+                int result = use.Create(registerUsername.Text, registerPassword.Text);
                 if (result == 1)
                 {
                     Lbl_errorMsg.Text = "Account Successfully Created";

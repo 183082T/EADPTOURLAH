@@ -10,7 +10,8 @@ namespace WebApplication2.BLL
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        
+        public int Points { get; set; }
+        public double GrandTotal { get; set; }
 
 
         public Users()
@@ -18,16 +19,18 @@ namespace WebApplication2.BLL
 
         }
 
-        public Users(string name, string password)
+        public Users(string name, string password,int points,double gt)
         {
             Username = name;
             Password = password;
+            Points = points;
+            GrandTotal = gt;
         }
 
-        public int Create()
+        public int Create(string name, string password)
         {
             UsersDAO dao = new UsersDAO();
-            int result = dao.CreateUser(this);
+            int result = dao.CreateUser(name,password);
             return result;
         }
 
@@ -37,6 +40,10 @@ namespace WebApplication2.BLL
             return dao.SelectUsersByUsername(name);
         }
 
+        public int updateGT(string name, string gt)
+        {
+            return UsersDAO.updateGT(name, gt);
+        }
 
 
     }
