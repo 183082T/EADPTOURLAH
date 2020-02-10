@@ -31,15 +31,6 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.TextBox TBFoodName;
         
         /// <summary>
-        /// LabelNameError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNameError;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -85,13 +76,13 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.FileUpload FUFoodPic;
         
         /// <summary>
-        /// Label4 control.
+        /// Label16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
         /// Label5 control.
