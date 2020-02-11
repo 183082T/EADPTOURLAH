@@ -21,8 +21,8 @@ namespace WebApplication2.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
 
-            string sqlStmt = "INSERT INTO Users ( name, password) " +
-                "VALUES (@pararegisterUsername,@pararegisterPassword)";
+            string sqlStmt = "INSERT INTO Users ( name, password, points) " +
+                "VALUES (@pararegisterUsername,@pararegisterPassword, @pararegisterPoints)";
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
 

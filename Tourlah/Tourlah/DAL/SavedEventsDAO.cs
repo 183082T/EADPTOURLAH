@@ -23,7 +23,7 @@ namespace WebApplication2.DAL
             sqlCmd = new SqlCommand(sqlStmt, myConn);
             sqlCmd.Parameters.AddWithValue("@parausername", Seve.Username);
             sqlCmd.Parameters.AddWithValue("@paraeventsid", Seve.EventsId);
-            sqlCmd.Parameters.AddWithValue("@paraeventname", Seve.eventName);
+            sqlCmd.Parameters.AddWithValue("@paraeventName", Seve.eventName);
             sqlCmd.Parameters.AddWithValue("@paraeventDesc", Seve.eventDescription);
             sqlCmd.Parameters.AddWithValue("@paraeventdate", Seve.eventDate);
             sqlCmd.Parameters.AddWithValue("@paraeventlocation", Seve.Location);

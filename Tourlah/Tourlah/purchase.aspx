@@ -16,7 +16,6 @@
 
     <div class="container-fluid" style="background-color: #CB86ED">
         <div class="container" style="padding: 80px;">
-
 <asp:Panel ID="Validation" Visible="false" runat="server" CssClass="alert alert-dismissable alert-danger" Height="64px">
             <button type="button" class="close" data-dismiss="alert">
                 <span aria-hidden="true">&times;</span>

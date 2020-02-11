@@ -20,10 +20,10 @@ namespace WebApplication2.BLL
         {
 
         }
-        public Events(int eventId,string eventname,string eventdescription,DateTime eventdate,string maintype,string secondtype,string location)
+        public Events(string eventname,string eventdescription,DateTime eventdate,string maintype,string secondtype,string location)
 
         {
-            Id = eventId;
+            
             EventName = eventname;
             EventDescription = eventdescription;
             EventDate = eventdate;

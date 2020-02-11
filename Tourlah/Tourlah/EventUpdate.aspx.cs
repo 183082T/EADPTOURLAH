@@ -20,10 +20,7 @@ namespace WebApplication2
 
 
 
-        protected void TbBirthdate0_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         protected void BtnBack_Click(object sender, EventArgs e)
         {
@@ -34,12 +31,13 @@ namespace WebApplication2
         {
             Events eve = new Events();
             DateTime eventTime = Convert.ToDateTime(Tbdate.Text);
-            eve = new Events(EventId,TbName.Text, Tbdescription.Text, eventTime, TbName.Text, TbSecondtype.Text, Tblocation.Text);
+            eve = new Events(TbName.Text, Tbdescription.Text, eventTime,Tbmaintype.Text, TbSecondtype.Text, Tblocation.Text);
             int result = eve.AddEvent();
             if (result == 1)
             {
                 LblMsg.Text = "Event has been added into list";
                 LblMsg.ForeColor = Color.Blue;
+                Response.Redirect("EventUpdate.aspx");
 
             }
             else
@@ -47,6 +45,11 @@ namespace WebApplication2
                 LblMsg.Text = "Unable to add event at the moment";
                 LblMsg.ForeColor = Color.Red;
             }
+        }
+
+        protected void Tbdescription_TextChanged(object sender, EventArgs e)
+        {
+                
         }
     }
 }
