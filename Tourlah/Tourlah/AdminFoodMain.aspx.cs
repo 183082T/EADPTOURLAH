@@ -20,19 +20,19 @@ namespace WebApplication2
             Response.Redirect("AddFood.aspx");
         }
 
-        protected void ButtonInfo_Click(object sender, EventArgs e)
+        protected void ButtonSearch_Click(object sender, EventArgs e)
         {
-            HtmlButton btn = (HtmlButton)sender;
-            Session["ID"] = btn.Attributes["FoodID"];
+            Session["FoodName"] = TBSearch.Text;
 
             Response.Redirect("AdminFoodInfo.aspx");
         }
-        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+
+        protected void ButtonMoreInfo(object source, DataListCommandEventArgs e)
         {
-            if (e.CommandName == "viewdetails")
-            {
-                Response.Redirect("AdminFoodInfo.aspx?id=" + e.CommandArgument.ToString());
-            }
+            DataList1.SelectedIndex = e.Item.ItemIndex;
+            Session["FoodName"] = ((Label)DataList1.SelectedItem.FindControl("LabelName")).Text;
+
+            Response.Redirect("AdminFoodInfo.aspx");
         }
     }
 }
