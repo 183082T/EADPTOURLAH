@@ -41,7 +41,7 @@ namespace WebApplication2.DAL
                 string maintype = row["maintype"].ToString();
                 string secondtype = row["secondtype"].ToString();
                 string location = row["location"].ToString(); ;
-                Events obj = new Events(id,eventname,eventdescription,eventdate,maintype,secondtype,location);
+                Events obj = new Events(eventname,eventdescription,eventdate,maintype,secondtype,location);
                 eventList.Add(obj);
             }
 

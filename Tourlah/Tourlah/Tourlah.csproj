@@ -140,6 +140,7 @@
     <Content Include="Content\mbr-additional.css" />
     <Content Include="Content\mobirise-icons.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\EventPage.css" />
     <Content Include="css\login.css" />
     <Content Include="css\review.css" />
     <Content Include="css\styleEventMain.css" />

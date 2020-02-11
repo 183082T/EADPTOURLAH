@@ -18,14 +18,7 @@ namespace WebApplication2
         protected void Page_Load(object sender, EventArgs e)
         {
             RefreshGridView();
-            try
-            {
-                Username = (string)Session["userName"];
-            }
-            catch
-            {
-
-            }
+            
         }
 
         protected void FavouriteGV_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,7 +37,7 @@ namespace WebApplication2
         }
         else{
                 ErrorLabel.Text = "Please log in to view your saved events.";
-
+                FailLink.Visible = true;
             }
         }
     }
